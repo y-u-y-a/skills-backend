@@ -1,0 +1,62 @@
+version: "3"
+services:
+  mysql:
+    container_name: skills_mysql
+    build:
+      context: ./mysql
+      dockerfile: build/Dockerfile.dev
+    ports:
+      - 4306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: skills
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
+      TZ: Asia/Tokyo
+    networks:
+      - default
+
+  backend:
+    container_name: skills_backend
+    build:
+      context: ./backend
+      dockerfile: build/Dockerfile.dev
+    ports:
+      - 4000:4000
+    volumes:
+      - ./backend/code:/code
+      - bk_node_modules:/code/node_modules # /code/node_modulesにインストールされたライブラリはローカルのnode_modulesというvolumeに記録される
+    working_dir: /code
+    command: npm run dev
+    depends_on:
+      - mysql
+    networks:
+      - default
+
+  frontend:
+    container_name: skills_frontend
+    build:
+      context: ./frontend
+      dockerfile: build/Dockerfile.dev
+    volumes:
+      - ./frontend/code:/code
+      - ft_node_modules:/code/node_modules
+    ports:
+      - 3000:3000
+    working_dir: /code
+    command: npm run dev
+    depends_on:
+      - mysql
+    networks:
+      - default
+
+networks:
+  default:
+    external: false
+volumes:
+  mysql-data:
+  bk_node_modules:
+  ft_node_modules:
