@@ -30,14 +30,11 @@ export default {
     '@nuxtjs/dotenv'
   ],
   // 環境変数の設定
-  // env: {
-  //   PROJECT_NAME: process.env.PROJECT_NAME,
-  //   API_URL: process.env.API_URL
-  // },
-  // 接続情報
-  server: {
-    host: process.env.HOST,
-    port: process.env.PORT
+  env: {
+    PROJECT_NAME: process.env.PROJECT_NAME || 'サンプルアプリ',
+    API_URL: process.env.API_URL || 'https://qiita.com/',
+    HOST: process.env.HOST || '0.0.0.0',
+    PORT: process.env.PORT || '3000'
   },
   // 参照：https://axios.nuxtjs.org/options(axiosに渡すパラメータを設定できる)
   axios: {
