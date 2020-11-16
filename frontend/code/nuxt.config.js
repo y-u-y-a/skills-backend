@@ -30,9 +30,14 @@ export default {
     '@nuxtjs/dotenv'
   ],
   // 環境変数の設定
-  env: {
-    PROJECT_NAME: process.env.PROJECT_NAME,
-    API_URL: process.env.API_URL
+  // env: {
+  //   PROJECT_NAME: process.env.PROJECT_NAME,
+  //   API_URL: process.env.API_URL
+  // },
+  // 接続情報
+  server: {
+    host: process.env.HOST,
+    port: process.env.PORT
   },
   // 参照：https://axios.nuxtjs.org/options(axiosに渡すパラメータを設定できる)
   axios: {
@@ -42,7 +47,6 @@ export default {
   proxy: {
       '/api/': process.env.API_URL
   },
-
   build: {
   }
 }

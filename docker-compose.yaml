@@ -44,14 +44,20 @@ services:
     volumes:
       - ./frontend/code:/code
       - ft_node_modules:/code/node_modules
+      - ft_nuxt:/code/.nuxt
+    environment:
+      PROJECT_NAME: サンプルアプリ
+      API_URL: https://qiita.com/
+      HOST: localhost
+      PORT: 3000
     ports:
       - 3000:3000
     working_dir: /code
     command: npm run dev
-    depends_on:
-      - mysql
-    networks:
-      - default
+    # depends_on:
+    #   - mysql
+    # networks:
+    #   - default
 
 networks:
   default:
@@ -60,3 +66,4 @@ volumes:
   mysql-data:
   bk_node_modules:
   ft_node_modules:
+  ft_nuxt:
