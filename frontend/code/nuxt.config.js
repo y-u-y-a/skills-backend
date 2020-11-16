@@ -31,10 +31,10 @@ export default {
   ],
   // 環境変数の設定
   env: {
+    NUXT_HOST: process.env.HOST || '0.0.0.0',
+    NUXT_PORT: process.env.PORT || '3000',
     PROJECT_NAME: process.env.PROJECT_NAME || 'サンプルアプリ',
-    API_URL: process.env.API_URL || 'https://qiita.com/',
-    HOST: process.env.HOST || '0.0.0.0',
-    PORT: process.env.PORT || '3000'
+    API_URL: process.env.API_URL || 'https://qiita.com/'
   },
   // 参照：https://axios.nuxtjs.org/options(axiosに渡すパラメータを設定できる)
   axios: {
