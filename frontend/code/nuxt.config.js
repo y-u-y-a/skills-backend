@@ -13,7 +13,7 @@ export default {
   },
 
   css: [
-    './src/assets/sass/app.scss'
+    './assets/sass/app.scss'
   ],
 
   plugins: [
@@ -30,17 +30,18 @@ export default {
     '@nuxtjs/dotenv'
   ],
   // 環境変数の設定
-  // env: {
-  //   PROJECT_NAME: process.env.PROJECT_NAME || 'Skills',
-  //   API_URL: process.env.API_URL || 'https://qiita.com/'
-  // },
-  // 参照：https://axios.nuxtjs.org/options(axiosに渡すパラメータを設定できる)
+  env: {
+    PROJECT_NAME: 'Skills',
+    API_URL: 'https://qiita.com/'
+  },
+  // 参照：https://axios.nuxtjs.org/options
   axios: {
+      baseURL: process.env.API_URL,
       proxy: true
   },
-  // key名の先頭にvalue部分が追加される(例：'/api/v2/items')
+  // CORS, 本番対策('/api/' -> 'http://api.example.com')
   proxy: {
-      '/api/': process.env.API_URL
+      '/api/': 'https://qiita.com/'
   },
   build: {
   }
