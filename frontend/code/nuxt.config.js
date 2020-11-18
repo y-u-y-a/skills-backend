@@ -1,7 +1,7 @@
 export default {
   srcDir: 'src/',
   head: {
-    title: 'frontend',
+    title: 'Skills',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -27,7 +27,7 @@ export default {
   modules: [
     ['bootstrap-vue/nuxt', {css: false}],
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   // 環境変数の設定
   env: {
