@@ -50,5 +50,10 @@ export default {
       '/api/': 'https://qiita.com/'
   },
   build: {
+    extend (config, ctx) {
+      config.resolve.alias['@atoms'] = '~/components/atoms';
+      config.resolve.alias['@organisms'] = '~/components/organisms';
+      config.resolve.alias['@templates'] = '~/components/templates';
+    }
   }
 }
