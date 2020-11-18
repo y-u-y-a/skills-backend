@@ -2,19 +2,18 @@
 $bp: 650px;
 // colors
 $white: #FFF;
-$red: #ff0000;
-$green: #78A54B;
+$pink: #e50295;
+$light-pink: #fbdbf0;
+$dark-blue: #000e6ada;
+$gray: #70707072;
+$light-gray :#d2cccc;
+$black: #424242;
+
 $brown :#685745;
 $dark-brown: #2a1907;
-$gray :#707070;
-$light-gray: #70707072;
-$black: #424242;
 $modal-black: rgba(0,0,0,0.8);
 
 
-// green
-.c-green{ color: $green; }
-.bg-green{ background: $green; }
 // white
 .c-white{ color: $white; }
 .bg-white{ background: $white; }
