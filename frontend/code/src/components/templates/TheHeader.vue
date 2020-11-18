@@ -1,5 +1,5 @@
 <template>
-  <header class="">
+  <header>
     <div class="contents row justify-content-between align-items-center">
       <h1>
         {{ project_name }}
@@ -7,7 +7,7 @@
       </h1>
       <nav class="row">
         <Button button_name="プレビュー" />
-        <Button button_name="設定" />
+        <Button button_name="設定" class="ml-05" />
       </nav>
     </div>
   </header>
@@ -31,6 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+  padding: 0.5rem 0;
+}
 h1 {
   font-size: 24px;
   font-weight: bold;
@@ -38,8 +41,5 @@ h1 {
     font-size: 12px;
     font-weight: normal;
   }
-}
-nav {
-  padding: 0.5rem 0;
 }
 </style>
