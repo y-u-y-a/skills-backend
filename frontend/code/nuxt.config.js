@@ -22,6 +22,7 @@ export default {
   components: true,
 
   buildModules: [
+    '@nuxtjs/style-resources',
   ],
 
   modules: [
@@ -29,6 +30,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
   ],
+  styleResources: {
+    scss: [
+      '@/assets/sass/foundation/vars.scss'
+    ]
+  },
   // 環境変数の設定
   env: {
     PROJECT_NAME: 'Skills',
