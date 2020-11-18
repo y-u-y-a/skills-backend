@@ -1,0 +1,16 @@
+.btn-brown {
+  display: inline-block;
+  padding: 0 4rem;
+  line-height: 40px;
+  min-height: 40px;
+  font-size: 16px;
+  color: $white;
+  background-color: $brown;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-brown:hover {
+  background-color: rgba($dark-brown, 0.9);
+  transition: 0.2s;
+}
