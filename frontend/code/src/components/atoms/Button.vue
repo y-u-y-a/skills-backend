@@ -5,7 +5,7 @@
 <script>
 export default {
   props: [
-    'button_name'
+    'button_name',
   ]
 }
 </script>
@@ -14,16 +14,17 @@ export default {
   a {
     width: 6rem;
     padding: 0.5rem 0;
-    margin-left: 1rem;
     font-size: 16px;
     color: $black;
     border: 1px solid $light-gray;
     border-radius: 5px;
     text-align: center;
+    background-color: $white;
   }
   a:hover {
     color: $pink;
     border-color: $pink;
-    background-color: rgba($light-pink, 0.8);
+    background-color: $light-pink;
+    transition: 0.2s;
   }
 </style>
