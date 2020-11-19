@@ -26,7 +26,7 @@ export default {
   ],
 
   modules: [
-    ['bootstrap-vue/nuxt', {css: false}],
+    // ['bootstrap-vue/nuxt', {css: false}],
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
   ],
