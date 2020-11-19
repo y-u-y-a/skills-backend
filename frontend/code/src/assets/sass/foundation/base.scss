@@ -1,6 +1,8 @@
 // 共通
 body{
   font-family:'メイリオ', 'Meiryo', sans-serif;
+  color: $black;
+  background-color: rgb(251, 239, 214);
 }
 img {
   align-self: flex-start; // for safari

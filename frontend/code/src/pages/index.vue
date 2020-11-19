@@ -1,17 +1,10 @@
 <template>
-  <div class="container-fluid">
-    <h1>{{ project_name }}</h1>
-    <ul class="row">
-      <li class="col-3 p-5 bg-base"></li>
-      <li class="col-3 p-5 bg-main"></li>
-      <li class="col-3 p-5 bg-base"></li>
-      <li class="col-3 p-5 bg-main"></li>
-    </ul>
-    <ul>
+  <div class="container">
+    <!-- <ul>
       <li v-for="(post, index) in posts" :key="index">
         <a :href="'post.url'" target="_blank">{{ index + 1 }}：{{ post.title }}</a>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -22,7 +15,6 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      project_name: process.env.PROJECT_NAME,
       posts: null
     }
   },

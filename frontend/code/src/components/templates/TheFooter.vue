@@ -12,13 +12,16 @@
       </li>
     </ul>
     <div style="text-align:center;">
-      <small>Game-On ©︎ 2020</small>
+      <small>Skills ©︎ 2020</small>
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   padding: 0.5rem 0;
   background: $dark-blue;
   ul {

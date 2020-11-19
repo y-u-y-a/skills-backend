@@ -16,12 +16,7 @@
 <script>
 import axios from 'axios';
 
-import Button from '@atoms/Button';
-
 export default {
-  components: {
-    Button
-  },
   data() {
     return {
       project_name: process.env.PROJECT_NAME
@@ -33,13 +28,13 @@ export default {
 <style lang="scss" scoped>
 header {
   padding: 0.5rem 0;
+  background-color: $white;
 }
 h1 {
   font-size: 24px;
   font-weight: bold;
   span {
     font-size: 12px;
-    font-weight: normal;
   }
 }
 </style>
