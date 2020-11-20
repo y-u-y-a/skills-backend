@@ -6,8 +6,10 @@
         <span class="pc">ブラウザでスキルシートを作成・共有</span>
       </h1>
       <nav class="row">
-        <Button button_name="プレビュー" />
-        <Button button_name="設定" class="ml-05" />
+        <IconButton icon="eye" class="sp" />
+        <IconButton icon="bars" class="sp ml-05" />
+        <TextButton button_name="プレビュー" class="pc" />
+        <TextButton button_name="設定" class="pc ml-05" />
       </nav>
     </div>
   </header>

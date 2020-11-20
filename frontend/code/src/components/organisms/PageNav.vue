@@ -6,7 +6,8 @@
           <CircleItem :text="n" />
         </li>
       </ul>
-      <Button button_name="ダウンロード" class="px-1" />
+      <TextButton button_name="ダウンロード" class="pc" />
+      <IconButton icon="download" class="sp" />
     </div>
   </div>
 </template>
