@@ -17,7 +17,6 @@ a {
   @include fontColor;
   width: 3rem;
   padding: 0.5rem 0;
-  font-size: 16px;
   border: 1px solid $gray;
   border-radius: 5px;
   text-align: center;

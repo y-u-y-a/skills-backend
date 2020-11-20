@@ -1,11 +1,17 @@
 <template>
-  <a href="#">{{ button_name }}</a>
+  <a href="#">
+    <font-awesome-icon v-if="before_icon" :icon="before_icon" />
+    {{ button_name }}
+    <font-awesome-icon v-if="after_icon" :icon="after_icon" />
+    </a>
 </template>
 
 <script>
 export default {
   props: [
-    'button_name'
+    'button_name',
+    'before_icon',
+    'after_icon'
   ]
 }
 </script>
@@ -15,7 +21,6 @@ a {
   @include fontColor;
   width: 8rem;
   padding: 0.5rem 0;
-  font-size: 16px;
   border: 1px solid $gray;
   border-radius: 5px;
   text-align: center;
