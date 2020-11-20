@@ -1,6 +1,6 @@
 <template>
   <div class="notfound contents">
-    <div class="notfound-container">
+    <div>
       <h2>Page Not Found.</h2>
       <h3>お探しのページが見つかりません。</h3>
       <p>
@@ -13,20 +13,17 @@
 
 <style lang="scss" scoped>
 .notfound {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 2rem;
-  padding: 2rem 0;
-  background-color: $white;
+  @include row(center, center);
+  margin-top: 5rem;
+  color: $dark-brown;
   h2 {
+    margin-bottom: 3rem;
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 2rem;
   }
   h3 {
-    font-size: 24px;
     margin-bottom: 3rem;
+    font-size: 24px;
   }
   p {
     line-height: 32px;

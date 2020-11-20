@@ -1,3 +1,8 @@
+@mixin bodyGradation($top_clr, $bottom_clr) {
+  background: -moz-linear-gradient(top, $top_clr, $bottom_clr);
+  background: -webkit-linear-gradient(top, $top_clr, $bottom_clr);
+  background: linear-gradient(to bottom, $top_clr, $bottom_clr);
+}
 @mixin focusStyle {
   color: $pink;
   border: 1px solid $pink;

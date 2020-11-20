@@ -2,13 +2,12 @@
 html, body {
   height: 100%;
 }
+html {
+  @include bodyGradation($white, $brown);
+}
 body{
-  // font-family:'メイリオ', 'Meiryo', sans-serif;
   font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
   color: $brown;
-  background: -moz-linear-gradient(top, $white, $brown);
-  background: -webkit-linear-gradient(top, $white, $brown);
-  background: linear-gradient(to bottom, $white, $brown);
 }
 img {
   align-self: flex-start; // for safari

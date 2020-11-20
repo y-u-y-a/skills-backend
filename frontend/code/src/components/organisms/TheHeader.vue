@@ -39,7 +39,7 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   a {
-    color: $black;
+    color: $dark-brown;
   }
   span {
     font-size: 12px;

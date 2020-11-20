@@ -45,7 +45,7 @@ export default {
   &-footer {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     a {
       border-radius: 3px;
       cursor: pointer;

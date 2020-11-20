@@ -1,15 +1,15 @@
 <template>
-  <footer>
+  <footer class="pc">
     <div class="footer-wrapper contents">
       <ul class="row justify-content-between">
         <li>
-          <a href="#">利用規約</a>
+          <a href="/Rule">利用規約</a>
         </li>
         <li>
-          <a href="#">プライバシーポリシー</a>
+          <a href="/Privacy">プライバシーポリシー</a>
         </li>
         <li>
-          <a href="#">お問い合わせ</a>
+          <a href="/Contact">お問い合わせ</a>
         </li>
       </ul>
       <div class="copy-right">
