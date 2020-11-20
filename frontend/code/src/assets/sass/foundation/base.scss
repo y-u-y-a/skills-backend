@@ -20,18 +20,14 @@ p {
   max-width: 1000px;
   margin: 0 auto;
 }
-// .contents-width {
-//   width: 95%;
-//   margin: 0 auto;
-// }
-// PC
-@media screen and (min-width: $bp) {
-  .sp{ display: none; }
-}
 // SP
 @media screen and (max-width: $bp) {
   .pc{ display: none; }
   .contents {
     padding: 0 0.5rem;
   }
+}
+// PC
+@media screen and (min-width: $bp) {
+  .sp{ display: none; }
 }
