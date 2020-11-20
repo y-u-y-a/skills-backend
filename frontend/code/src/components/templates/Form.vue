@@ -6,6 +6,7 @@
       </div>
       <!-- Page(Template)ごとに切替 -->
       <slot name="content"></slot>
+      <!-- end slot -->
       <div class="form-footer">
         <a :href="pre_link" class="pre">
           <font-awesome-icon icon="angle-double-left" />前へ
@@ -39,6 +40,7 @@ export default {
     padding: 2rem 0;
     font-size: 20px;
     font-weight: bold;
+    color: $brown;
   }
   &-footer {
     display: flex;

@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label for="" class="form-label">{{ label }}</label>
+    <FormLabel :label="label" />
     <select :name="keyname">
       <option v-for="v in val_list" :key="v" :value="v">
         {{ v }}
@@ -21,12 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 .form-group {
-  display: flex;
-  flex-direction: column;
+  @include column;
   padding-bottom: 4rem;
-  .form-label {
-    margin-bottom: 0.5rem;
-  }
   select {
     height: 2rem;
     border-radius: 5px;

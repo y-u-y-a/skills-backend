@@ -1,6 +1,6 @@
 <template>
   <div class="form-group">
-    <label for="" class="form-label">{{ label }}</label>
+    <FormLabel :label="label" />
     <textarea
       :name="keyname"
       :placeholder="placeholder"
@@ -22,12 +22,8 @@ export default {
 
 <style lang="scss" scoped>
 .form-group {
-  display: flex;
-  flex-direction: column;
+  @include column;
   padding-bottom: 4rem;
-  .form-label {
-    margin-bottom: 0.5rem;
-  }
   textarea {
     padding: 0 0.5rem;
     border-radius: 5px;
