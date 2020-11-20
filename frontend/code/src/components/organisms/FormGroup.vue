@@ -3,12 +3,12 @@
     <!-- input -->
     <template v-if="type == 'input'">
       <label for="" class="form-label">{{ label }}</label>
-      <input type="text">
+      <input type="text" :name="keyname" :placeholder="placeholder">
     </template>
     <!-- select -->
     <template v-if="type == 'select'">
       <label for="" class="form-label">{{ label }}</label>
-      <select name="position" id="">
+      <select :name="keyname">
         <option v-for="v in val_list" :key="v" :value="v">
           {{ v }}
         </option>
@@ -17,7 +17,12 @@
     <!-- textarea -->
     <template v-if="type == 'textarea'">
       <label for="" class="form-label">{{ label }}</label>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <textarea
+        :name="keyname"
+        cols="30"
+        rows="10"
+        :placeholder="placeholder">
+      </textarea>
     </template>
     <!-- checkbox -->
     <template v-if="type == 'checkbox'">
@@ -39,8 +44,9 @@ export default {
   props: [
     'type',
     'label',
+    'keyname',
     'val_list',
-    'keyname'
+    "placeholder"
   ]
 }
 </script>
@@ -59,6 +65,9 @@ export default {
   }
   input, select {
     height: 2rem;
+  }
+  input, textarea {
+    padding: 0 0.5rem;
   }
   select:hover {
     opacity: 0.6;
