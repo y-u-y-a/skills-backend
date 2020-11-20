@@ -32,7 +32,6 @@ export default {
 <style lang="scss" scoped>
 header {
   padding: 0.5rem 0;
-  background-color: $white;
 }
 h1 {
   font-size: 24px;

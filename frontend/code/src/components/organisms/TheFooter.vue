@@ -23,7 +23,6 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 0.5rem 0;
-  background: $dark-blue;
   ul {
     max-width: 350px;
     margin: 0 auto 0.5rem;
