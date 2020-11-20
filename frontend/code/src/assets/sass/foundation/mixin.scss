@@ -11,7 +11,7 @@
 // ###############################################
 // flex
 // ###############################################
-@mixin row($justify: 0, $align: 0, $wrap:0) {
+@mixin row($justify: 0, $align: 0, $wrap:0, $wrap_align: 0) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -93,37 +93,37 @@
     flex-wrap: wrap-reverse;
   }
 
-  // // align-content複数行設定（$wrap_align: 0）
-  // @if $wrap_align == start { // 上揃え
-  //   -webkit-align-content: flex-start;
-  //   -ms-flex-line-pack: start;
-  //   align-content: flex-start;
-  // }
-  // @else if $wrap_align == end { // 下揃え
-  //   -webkit-align-content: flex-end;
-  //   -ms-flex-line-pack: end;
-  //   align-content: flex-end;
-  // }
-  // @else if $wrap_align == center { // 中央揃え
-  //   -webkit-align-content: center;
-  //   -ms-flex-line-pack: center;
-  //   align-content: center;
-  // }
-  // @else if $wrap_align == between { // 両端配置
-  //   -webkit-align-content: space-between;
-  //   -ms-flex-line-pack: justify;
-  //   align-content: space-between;
-  // }
-  // @else if $wrap_align == around { // 均等配置
-  //   -webkit-align-content: space-around;
-  //   -ms-flex-line-pack: distribute;
-  //   align-content: space-around;
-  // }
-  // @else if $wrap_align == stretch { // 高さ揃え
-  //   -webkit-align-content: stretch;
-  //   -ms-flex-line-pack: stretch;
-  //   align-content: stretch;
-  // }
+  // align-content複数行設定（$wrap_align: 0）
+  @if $wrap_align == start { // 上揃え
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+  }
+  @else if $wrap_align == end { // 下揃え
+    -webkit-align-content: flex-end;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+  }
+  @else if $wrap_align == center { // 中央揃え
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  }
+  @else if $wrap_align == between { // 両端配置
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+  }
+  @else if $wrap_align == around { // 均等配置
+    -webkit-align-content: space-around;
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+  }
+  @else if $wrap_align == stretch { // 高さ揃え
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+  }
 
   // // 軸入れ替え
   // @if $column == 1 {

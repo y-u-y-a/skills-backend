@@ -28,11 +28,12 @@ export default {
   @include column;
   padding-bottom: 2rem;
   .form-checkbox {
-    @include row($wrap: wrap);
+    @include row($wrap: wrap, $wrap_align: between);
     label {
-      padding: 0.5rem 2rem;
-      margin-right: 1rem;
-      margin-bottom: 0.5rem;
+      width: 6rem;
+      padding: 0.5rem;
+      text-align: center;
+      margin: 0 1rem 0.5rem 0;
       border: 1px solid $gray;
       border-radius: 5px;
       cursor: pointer;
