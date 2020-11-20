@@ -4,7 +4,9 @@
       <div class="form-title">
         {{ form_title }}
       </div>
+      <!-- Page(Template)ごとに切替 -->
       <slot name="content"></slot>
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
