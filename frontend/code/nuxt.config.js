@@ -27,18 +27,28 @@ export default {
 
   modules: [
     // ['bootstrap-vue/nuxt', {css: false}],
-    '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@nuxtjs/axios',
+    'nuxt-fontawesome',
   ],
   styleResources: {
     scss: [
       '@/assets/sass/foundation/vars.scss'
     ]
   },
-  // 環境変数の設定
+  // 環境変数
   env: {
     PROJECT_NAME: 'Skills',
     API_URL: 'https://qiita.com/'
+  },
+  // FontAwesome
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }
+    ]
   },
   // 参照：https://axios.nuxtjs.org/options
   axios: {
@@ -52,8 +62,8 @@ export default {
   build: {
     extend (config, ctx) {
       config.resolve.alias['@atoms'] = '~/components/atoms';
+      config.resolve.alias['@molecules'] = '~/components/molecules';
       config.resolve.alias['@organisms'] = '~/components/organisms';
-      config.resolve.alias['@templates'] = '~/components/templates';
     }
   }
 }
