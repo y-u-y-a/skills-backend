@@ -24,9 +24,6 @@ a {
   background-color: $white;
 }
 a:hover {
-  color: $pink;
-  border-color: $pink;
-  background-color: $light-pink;
-  transition: 0.2s;
+  @include focusStyle;
 }
 </style>

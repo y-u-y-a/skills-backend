@@ -33,7 +33,8 @@ export default {
   ],
   styleResources: {
     scss: [
-      '@/assets/sass/foundation/vars.scss'
+      '@/assets/sass/foundation/vars.scss',
+      '@/assets/sass/foundation/mixin.scss'
     ]
   },
   // 環境変数
