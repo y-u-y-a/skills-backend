@@ -7,10 +7,10 @@
       <!-- Page(Template)ごとに切替 -->
       <slot name="content"></slot>
       <div class="form-footer">
-        <a :href="pre_link">
+        <a :href="pre_link" class="pre">
           <font-awesome-icon icon="angle-double-left" />前へ
           </a>
-        <a :href="next_link">
+        <a :href="next_link" class="next">
           次へ<font-awesome-icon icon="angle-double-right" />
           </a>
       </div>
@@ -45,13 +45,29 @@ export default {
     justify-content: space-between;
     padding-bottom: 2rem;
     a {
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .pre {
+      padding: 0.5rem 1.5rem 0.5rem 0;
+      color: $pink;
+      svg {
+        margin-right: 0.5rem;
+      }
+    }
+    .pre:hover {
+      opacity: 0.5;
+    }
+    .next {
       padding: 0.5rem 1.5rem;
       color: $white;
       background-color: $pink;
       border: 1px solid $pink;
-      border-radius: 3px;
+      svg {
+        margin-left: 0.5rem;
+      }
     }
-    a:hover {
+    .next:hover {
       color: $pink;
       background-color: $light-pink;
       transition: 0.2s;
