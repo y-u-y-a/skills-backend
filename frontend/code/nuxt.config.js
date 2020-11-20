@@ -59,11 +59,22 @@ export default {
   proxy: {
       '/api/': 'https://qiita.com/'
   },
+  // グローバル変数
   build: {
     extend (config, ctx) {
       config.resolve.alias['@atoms'] = '~/components/atoms';
       config.resolve.alias['@molecules'] = '~/components/molecules';
       config.resolve.alias['@organisms'] = '~/components/organisms';
+    }
+  },
+  // 404
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({
+        name: '404error',
+        path: '*',
+        component: resolve('~/pages/404.vue')
+      })
     }
   }
 }
