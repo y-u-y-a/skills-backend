@@ -5,9 +5,9 @@ html, body {
 body{
   font-family:'メイリオ', 'Meiryo', sans-serif;
   color: $black;
-  background: -moz-linear-gradient(top, $white, $sand);
-  background: -webkit-linear-gradient(top, $white, $sand);
-  background: linear-gradient(to bottom, $white, $sand);
+  background: -moz-linear-gradient(top, $white, $brown);
+  background: -webkit-linear-gradient(top, $white, $brown);
+  background: linear-gradient(to bottom, $white, $brown);
 }
 img {
   align-self: flex-start; // for safari
