@@ -28,13 +28,11 @@ export default {
   @include column;
   padding-bottom: 2rem;
   .form-checkbox {
-    display: flex;
-    flex-wrap: wrap;
+    @include row($wrap: wrap);
     label {
-      @include fontColor;
-      padding: 1rem 2rem;
+      padding: 0.5rem 2rem;
       margin-right: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       border: 1px solid $gray;
       border-radius: 5px;
       cursor: pointer;
