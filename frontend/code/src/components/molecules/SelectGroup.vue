@@ -22,7 +22,7 @@ export default {
 <style lang="scss" scoped>
 .form-group {
   @include column;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   select {
     @include fontColor;
     height: 2rem;

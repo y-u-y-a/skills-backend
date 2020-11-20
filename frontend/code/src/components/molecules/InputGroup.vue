@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 .form-group {
   @include column;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   input {
     height: 2rem;
     padding: 0 0.5rem;
