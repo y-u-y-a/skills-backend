@@ -2,8 +2,10 @@
   <header>
     <div class="contents row justify-content-between align-items-center">
       <h1>
-        {{ project_name }}
-        <span class="pc">ブラウザでスキルシートを作成・共有</span>
+        <a href="/">
+          {{ project_name }}
+          <span class="pc">ブラウザでスキルシートを作成・共有</span>
+        </a>
       </h1>
       <nav class="row">
         <IconButton icon="eye" class="sp" />
@@ -35,6 +37,9 @@ header {
 h1 {
   font-size: 24px;
   font-weight: bold;
+  a {
+    color: $black;
+  }
   span {
     font-size: 12px;
   }

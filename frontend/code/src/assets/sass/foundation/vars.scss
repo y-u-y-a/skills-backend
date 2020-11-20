@@ -4,11 +4,10 @@ $bp: 650px;
 $white: #FFF;
 $pink: #e3165c;
 $light-pink: #fbdbf0;
-$dark-blue: #000e6ada;
+$dark-blue: #020b40;
 $blue: #2f45d2;
 $light-blue: #dcebfe;
-$gray: #70707072;
-$light-gray :#d2cccc;
+$gray: #bfbfbf;
 $black: #424242;
 
 $brown :#685745;
@@ -25,9 +24,6 @@ $modal-black: rgba(0,0,0,0.8);
 // gray
 .c-gray{ color: $gray; }
 .bg-gray{ background: $gray; }
-// light-gray
-.c-light-gray{ color: $light-gray; }
-.bg-light-gray{ background: $light-gray; }
 // black
 .c-black{ color: $black; }
 .bg-black{ background: $black; }

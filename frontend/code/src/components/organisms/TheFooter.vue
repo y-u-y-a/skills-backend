@@ -11,7 +11,7 @@
         <a href="#">お問い合わせ</a>
       </li>
     </ul>
-    <div style="text-align:center;">
+    <div class="copyright">
       <small>Skills ©︎ 2020</small>
     </div>
   </footer>
@@ -32,9 +32,10 @@ footer {
     font-size: 14px;
     color: $white;
   }
-  small {
+  .copyright {
     font-size: 12px;
     color: $white;
+    text-align: center;
   }
 }
 </style>

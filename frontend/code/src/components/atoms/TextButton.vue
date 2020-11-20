@@ -16,7 +16,7 @@ a {
   padding: 0.5rem 0;
   font-size: 16px;
   color: $black;
-  border: 1px solid $light-gray;
+  border: 1px solid $gray;
   border-radius: 5px;
   text-align: center;
   background-color: $white;
@@ -26,11 +26,5 @@ a:hover {
   border-color: $pink;
   background-color: $light-pink;
   transition: 0.2s;
-}
-@media screen and (max-width: $bp) {
-  a {
-    max-width: 6rem;
-    font-size: 14px;
-  }
 }
 </style>
