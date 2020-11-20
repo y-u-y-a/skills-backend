@@ -4,6 +4,9 @@
   background-color: $light-pink;
   transition: 0.2s;
 }
+@mixin fontColor {
+  color: $brown;
+}
 
 // ###############################################
 // flex

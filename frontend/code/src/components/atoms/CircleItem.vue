@@ -1,5 +1,5 @@
 <template>
-  <div class="circle row justify-content-around align-items-center">
+  <div class="circle" :class="{active: is_active}">
     <span>{{ text }}</span>
   </div>
 </template>
@@ -7,13 +7,15 @@
 <script>
 export default {
   props: [
-    'text'
+    'text',
+    'is_active'
   ]
 }
 </script>
 
 <style lang="scss" scoped>
 .circle {
+  @include fontColor;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -25,9 +27,9 @@ export default {
   cursor: pointer;
 }
 .circle:hover {
-  color: $pink;
-  border: 1px solid $pink;
-  background-color: $light-pink;
-  transition: 0.2s;
+  @include focusStyle;
+}
+.active {
+  @include focusStyle;
 }
 </style>

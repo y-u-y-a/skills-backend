@@ -37,10 +37,10 @@ export default {
     margin: 0 auto;
   }
   &-title {
+    @include fontColor;
     padding: 2rem 0;
     font-size: 20px;
     font-weight: bold;
-    color: $brown;
   }
   &-footer {
     display: flex;

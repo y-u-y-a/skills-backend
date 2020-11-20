@@ -24,6 +24,7 @@ export default {
   @include column;
   padding-bottom: 4rem;
   select {
+    @include fontColor;
     height: 2rem;
     border-radius: 5px;
     border: 1px solid $gray;
