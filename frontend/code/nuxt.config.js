@@ -74,8 +74,8 @@ export default {
       routes.push({
         name: '404error',
         path: '*',
-        component: resolve('~/pages/404.vue')
-      })
+        component: resolve('~/pages/error/404.vue')
+      });
     }
   }
 }
