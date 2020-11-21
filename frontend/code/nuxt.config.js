@@ -40,7 +40,6 @@ export default {
   // 環境変数
   env: {
     PROJECT_NAME: 'Skills',
-    API_URL: 'https://qiita.com/'
   },
   // FontAwesome
   fontawesome: {
@@ -53,12 +52,13 @@ export default {
   },
   // 参照：https://axios.nuxtjs.org/options
   axios: {
-      baseURL: process.env.API_URL,
       proxy: true
   },
-  // CORS, 本番対策('/api/' -> 'http://api.example.com')
+  // CORS, 本番対策('https://qiita.com/api/v2/')
+  // localhost:3000/api/v2/」にアクセスすると,
+  // localhost:3000」を「https://qiita.com」へプロキシする
   proxy: {
-      '/api/': 'https://qiita.com/'
+      '/api/v2': 'https://qiita.com'
   },
   // グローバル変数
   build: {
