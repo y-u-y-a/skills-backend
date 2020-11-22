@@ -2,8 +2,7 @@
   <div class="contents column justify-content-around align-items-center">
     <div class="title">
       <h2>
-        ブラウザ上で簡単に<br class="sp">
-        スキルシートが作れます！
+        ブラウザ上で簡単に<br class="sp">スキルシートが作れます！
       </h2>
       <p>
         Skillsは、ブラウザ上でスキルシート作成ができるサービスです。<br>
@@ -29,6 +28,7 @@
   h2 {
     margin-bottom: 3rem;
     font-size: 28px;
+    font-weight: bold;
   }
   p {
     margin-bottom: 1rem;
