@@ -1,11 +1,11 @@
 <template>
-  <div class="error contents">
-    <div>
+  <main class="contents">
+    <section>
       <h2>{{ title }}</h2>
       <h3>{{ subtitle }}</h3>
       <p>{{ messages }}</p>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.error {
+main {
   @include row(center, center);
   margin-top: 5rem;
   color: $dark-brown;
