@@ -8,12 +8,12 @@
       <slot name="content"></slot>
       <!-- end slot -->
       <div class="form-footer">
-        <a :href="pre_link" class="pre">
+        <NuxtLink :to="pre_link" class="pre">
           <font-awesome-icon icon="angle-double-left" />前へ
-          </a>
-        <a :href="next_link" class="next">
+        </NuxtLink>
+        <NuxtLink :to="next_link" class="next">
           次へ<font-awesome-icon icon="angle-double-right" />
-          </a>
+        </NuxtLink>
       </div>
     </div>
   </div>

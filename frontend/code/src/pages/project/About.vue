@@ -3,6 +3,7 @@
     <PageNav />
     <Form
       form_title="案件情報を入力"
+      pre_link="/"
       next_link="/project/Period">
       <template v-slot:content>
         <InputGroup label="案件名" placeholder="xxxxのシステム開発" />

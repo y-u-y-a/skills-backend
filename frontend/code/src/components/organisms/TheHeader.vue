@@ -2,17 +2,17 @@
   <header>
     <div class="contents row justify-content-between align-items-center">
       <h1>
-        <a href="/">
+        <NuxtLink to="/">
           {{ project_name }}
           <span class="pc">ブラウザでスキルシートを作成・共有</span>
-        </a>
+        </NuxtLink>
       </h1>
-      <NavList>
+      <NavList class="nav">
         <template v-slot:content>
-          <IconButton icon="eye" class="sp ml-05" />
-          <IconButton icon="bars" class="sp ml-05" />
-          <TextButton button_name="プレビュー" class="pc ml-05" />
-          <TextButton button_name="設定" class="pc ml-05" />
+          <IconButton icon="eye" class="sp" />
+          <IconButton icon="bars" class="sp" />
+          <TextButton button_name="プレビュー" class="pc" />
+          <TextButton button_name="設定" class="pc" />
         </template>
       </NavList>
     </div>
@@ -20,7 +20,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   data() {
@@ -43,6 +42,12 @@ h1 {
   }
   span {
     font-size: 12px;
+  }
+}
+.nav {
+  button {
+    margin-left: 0.5rem;
+    font-size: 16px;
   }
 }
 </style>

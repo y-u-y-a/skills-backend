@@ -1,9 +1,9 @@
 <template>
-  <a href="#">
+  <button type="button">
     <font-awesome-icon v-if="before_icon" :icon="before_icon" />
     {{ button_name }}
     <font-awesome-icon v-if="after_icon" :icon="after_icon" />
-    </a>
+    </button>
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-a {
+button {
   @include fontColor;
   width: 8rem;
   padding: 0.5rem 0;
@@ -25,8 +25,9 @@ a {
   border-radius: 5px;
   text-align: center;
   background-color: $white;
+  cursor: pointer;
 }
-a:hover {
+button:hover {
   @include focusStyle;
   transition: 0.2s;
 }
