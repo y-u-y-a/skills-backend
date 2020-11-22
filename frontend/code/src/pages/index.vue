@@ -2,8 +2,8 @@
   <div class="column justify-content-around align-items-center">
     <!-- store/index -->
     <div class="contents mb-2">
-      <button @click="$store.commit('add')">増加</button>
-      <button @click="$store.commit('remove')">減少</button>
+      <button @click="countPlus()">増加</button>
+      <button @click="countMinus()">減少</button>
     </div>
     <div>{{ count }}</div>
     <!-- store/qiita -->
@@ -18,22 +18,26 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
   computed: {
-    count() {
-      return this.$store.state.counter;
-    },
-    articles() {
-      return this.$store.state.qiita.articles; // state
-      // return this.$store.getters['qiita/articles']; // getters
-    }
+    ...mapGetters({
+      count: 'counter',
+      articles: 'qiita/articles'
+    }),
   },
 
   created() {
-    this.$store.dispatch('qiita/getArticles');
+    this.getArticles();
   },
 
   methods: {
+    ...mapActions({
+      countPlus: 'plus',
+      countMinus: 'minus',
+      getArticles: 'qiita/getArticles'
+    }),
   }
 };
 </script>

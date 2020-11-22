@@ -9,10 +9,10 @@ export const getters = {
 }
 
 export const mutations = {
-  add(state) {
+  plus(state) {
     state.counter += 1;
   },
-  remove(state) {
+  minus(state) {
     state.counter -= 1;
   }
 }
