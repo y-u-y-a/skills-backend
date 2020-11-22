@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="default-container">
     <TheHeader />
     <main>
       <Nuxt />
@@ -10,9 +10,14 @@
 
 <style lang="scss" scoped>
 // Fixed Footer
-.container {
+.default-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+@media screen and (max-width: $bp) {
+  main {
+    padding-bottom: 4rem;
+  }
 }
 </style>

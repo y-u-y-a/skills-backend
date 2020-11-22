@@ -6,10 +6,11 @@
       pre_link="/project/Work"
       next_link="/">
       <template v-slot:content>
-        <InputGroup label="OS・DB" class="w-30 pb-2" />
-        <InputGroup label="言語" class="w-30 pb-2" />
-        <InputGroup label="FW" class="w-30 pb-2" />
-        <InputGroup label="ツール" class="w-30 pb-2" />
+        <InputGroup label="OS" class="w-30 pb-1" />
+        <InputGroup label="DB" class="w-30 pb-1" />
+        <InputGroup label="言語" class="w-30 pb-1" />
+        <InputGroup label="FW" class="w-30 pb-1" />
+        <InputGroup label="ツール" class="w-30 pb-1" />
       </template>
     </Form>
   </div>
