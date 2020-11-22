@@ -2,7 +2,7 @@
   <div>
     <PageNav />
     <Form
-      form_title="業務内容を入力"
+      form_title="開発環境を入力"
       pre_link="/project/Work"
       next_link="/">
       <template v-slot:content>

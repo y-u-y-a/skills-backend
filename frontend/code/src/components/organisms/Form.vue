@@ -1,6 +1,6 @@
 <template>
-  <div class="form contents">
-    <div class="form-wrapper">
+  <div class="contents">
+    <div class="form">
       <div class="form-title">
         {{ form_title }}
       </div>
@@ -32,10 +32,7 @@ export default {
 <style lang="scss" scoped>
 .form {
   background: $white;
-  &-wrapper {
-    width: 95%;
-    margin: 0 auto;
-  }
+  padding: 0 1rem;
   &-title {
     @include fontColor;
     padding: 2rem 0;

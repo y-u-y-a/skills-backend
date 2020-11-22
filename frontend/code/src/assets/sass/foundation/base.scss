@@ -18,13 +18,11 @@ p {
 .contents {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 0.5rem;
 }
 // SP
 @media screen and (max-width: $bp) {
   .pc{ display: none; }
-  .contents {
-    padding: 0 0.5rem;
-  }
 }
 // PC
 @media screen and (min-width: $bp) {
