@@ -13,7 +13,7 @@ export default {
   },
 
   css: [
-    './assets/sass/app.scss'
+    '@/assets/sass/app.scss'
   ],
 
   plugins: [
@@ -58,9 +58,12 @@ export default {
   // localhost:3000/api/v2/」にアクセスすると,
   // localhost:3000」を「https://qiita.com」へプロキシする
   proxy: {
-      '/api/v2': 'https://qiita.com'
+      '/api': {
+        target: 'https://qiita.com',
+        pathRewrite: { '/api': '/api/v2' }
+      }
   },
-  // グローバル変数
+  // エイリアス
   build: {
     extend (config, ctx) {
       config.resolve.alias['@atoms'] = '~/components/atoms';

@@ -19,7 +19,7 @@ export const mutations = {
 
 export const actions = {
   async getArticles({state, commit}) {
-    const res = await axios.get('/api/v2/users/yuya00/items');
+    const res = await axios.get('/api/users/yuya00/items');
     commit('setArticles', res.data);
   }
 }
