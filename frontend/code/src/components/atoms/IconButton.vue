@@ -1,5 +1,5 @@
 <template>
-  <button type="button">
+  <button @click="$emit('trigger')" type="button">
     <font-awesome-icon :icon="icon" />
   </button>
 </template>
