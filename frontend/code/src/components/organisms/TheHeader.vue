@@ -3,7 +3,7 @@
     <div class="contents row justify-content-between align-items-center">
       <h1>
         <NuxtLink to="/">
-          {{ project_name }}
+          {{ $store.state.APP_NAME }}
           <span class="pc">ブラウザでスキルシートを作成・共有</span>
         </NuxtLink>
       </h1>
@@ -11,21 +11,29 @@
         <template v-slot:content>
           <IconButton icon="eye" class="sp" />
           <IconButton icon="bars" class="sp" />
-          <TextButton button_name="プレビュー" class="pc" />
+          <TextButton @trigger="openModal" button_name="プレビュー" class="pc" />
           <TextButton button_name="設定" class="pc" />
         </template>
       </NavList>
     </div>
+    <Modal v-if="is_modal">
+      <template v-slot:content>
+        <h2>プレビュー</h2>
+      </template>
+    </Modal>
   </header>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  data() {
-    return {
-      project_name: process.env.PROJECT_NAME
-    }
+  computed: {
+    ...mapGetters(['is_modal']),
+  },
+
+  methods: {
+    ...mapActions(['openModal']),
   }
 }
 </script>

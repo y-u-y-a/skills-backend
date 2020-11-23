@@ -1,22 +1,25 @@
 export const state = () => ({
-  counter: 0
+  APP_NAME: process.env.PROJECT_NAME,
+  is_modal: false,
 });
 
 export const getters = {
-  counter(state) {
-    return state.counter
+  is_modal(state) {
+    return state.is_modal;
   }
 }
 
 export const mutations = {
-  plus(state) {
-    state.counter += 1;
-  },
-  minus(state) {
-    state.counter -= 1;
+  switchModal(state, bool) {
+    state.is_modal = bool;
   }
 }
 
 export const actions = {
-
+  openModal({commit}) {
+    commit('switchModal', true);
+  },
+  closeModal({commit}) {
+    commit('switchModal', false);
+  }
 }

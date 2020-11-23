@@ -15,19 +15,6 @@ scroll系
 .over-wrap { overflow: wrap; }
 
 /*-------------------
-モーダル用(画面全体を覆う設定)
---------------------*/
-.modal-window{
-  z-index: 9999;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  // background:$modal-black;
-}
-
-/*-------------------
 モーダル表示時に追加(スクロール禁止)
 --------------------*/
 .no-scroll {
