@@ -1,27 +1,32 @@
 <template>
-  <header>
-    <div class="contents row justify-content-between align-items-center">
-      <h1>
-        <NuxtLink to="/">
-          {{ $store.state.APP_NAME }}
-          <span class="pc">ブラウザでスキルシートを作成・共有</span>
-        </NuxtLink>
-      </h1>
-      <NavList class="nav">
+  <div>
+    <header>
+      <div class="contents row justify-content-between align-items-center">
+        <h1>
+          <NuxtLink to="/">
+            {{ $store.state.APP_NAME }}
+            <span class="pc">ブラウザでスキルシートを作成・共有</span>
+          </NuxtLink>
+        </h1>
+        <NavList class="nav">
+          <template v-slot:content>
+            <IconButton icon="eye" class="sp" />
+            <IconButton icon="bars" class="sp" />
+            <TextButton @trigger="openModal" button_name="プレビュー" class="pc" />
+            <TextButton button_name="設定" class="pc" />
+          </template>
+        </NavList>
+      </div>
+    </header>
+    <!-- Modal -->
+    <transition name="modal">
+      <Modal v-if="is_modal">
         <template v-slot:content>
-          <IconButton icon="eye" class="sp" />
-          <IconButton icon="bars" class="sp" />
-          <TextButton @trigger="openModal" button_name="プレビュー" class="pc" />
-          <TextButton button_name="設定" class="pc" />
+          <h2>プレビュー</h2>
         </template>
-      </NavList>
-    </div>
-    <Modal v-if="is_modal">
-      <template v-slot:content>
-        <h2>プレビュー</h2>
-      </template>
-    </Modal>
-  </header>
+      </Modal>
+    </transition><!-- end Modal -->
+  </div>
 </template>
 
 <script>
