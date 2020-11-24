@@ -1,12 +1,11 @@
 <template>
   <div class="form-group">
     <FormLabel :label="label" />
-    <textarea
-      :name="keyname"
+    <input
+      @input="emitter"
+      :value="value"
       :placeholder="placeholder"
-      cols="30"
-      rows="10">
-    </textarea>
+      type="text">
   </div>
 </template>
 
@@ -14,9 +13,15 @@
 export default {
   props: [
     'label',
-    'keyname',
-    "placeholder"
-  ]
+    'value',
+    'placeholder'
+  ],
+  methods: {
+    emitter(e) {
+      // 親側ではv-modelでOK(=@input+:value)
+      this.$emit('input', e.target.value);
+    }
+  }
 }
 </script>
 
@@ -24,7 +29,8 @@ export default {
 .form-group {
   @include column;
   padding-bottom: 2rem;
-  textarea {
+  input {
+    height: 2rem;
     padding: 0 0.5rem;
     border-radius: 5px;
     border: 1px solid $gray;

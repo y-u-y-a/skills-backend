@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+export const state = () => ({
+});
+
+export const getters = {
+}
+
+export const mutations = {
+}
+
+export const actions = {
+  insertProfile({commit}, {profile}) {
+    console.log(profile);
+    // location.href = '/';
+  }
+}

@@ -1,11 +1,13 @@
 <template>
   <div class="form-group">
     <FormLabel :label="label" />
-    <select :name="keyname">
-      <option v-for="v in val_list" :key="v" :value="v">
-        {{ v }}
-      </option>
-    </select>
+    <textarea
+      @input="emitter"
+      :value="value"
+      :placeholder="placeholder"
+      cols="30"
+      rows="10">
+    </textarea>
   </div>
 </template>
 
@@ -13,9 +15,14 @@
 export default {
   props: [
     'label',
-    'keyname',
-    'val_list'
-  ]
+    'value',
+    "placeholder"
+  ],
+  methods: {
+    emitter(e) {
+      this.$emit('input', e.target.value);
+    }
+  }
 }
 </script>
 
@@ -23,15 +30,10 @@ export default {
 .form-group {
   @include column;
   padding-bottom: 2rem;
-  select {
-    @include fontColor;
-    height: 2rem;
+  textarea {
+    padding: 0 0.5rem;
     border-radius: 5px;
     border: 1px solid $gray;
-  }
-  select:hover {
-    opacity: 0.6;
-    cursor: pointer;
   }
 }
 </style>
