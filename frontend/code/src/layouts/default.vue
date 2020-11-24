@@ -6,16 +6,14 @@
     </main>
     <TheFooter />
     <!-- Hidden Pages -->
-    <!-- Preview -->
     <transition name="fade">
+      <!-- Preview -->
       <Modal v-if="is_preview" page_name="preview">
         <template v-slot:content>
           <Preview />
         </template>
       </Modal>
-    </transition>
-    <!-- Sidebar -->
-    <transition name="fade">
+      <!-- Sidebar -->
       <Modal v-if="is_sidebar" page_name="sidebar">
         <template v-slot:content>
           <Sidebar />

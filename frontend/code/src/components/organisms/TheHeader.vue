@@ -10,8 +10,14 @@
         </h1>
         <NavList class="nav">
           <template v-slot:content>
-            <IconButton icon="eye" class="sp" />
-            <IconButton icon="bars" class="sp" />
+            <IconButton
+              @trigger="$store.dispatch('showPage', {page_name: 'preview'})"
+              icon="eye"
+              class="sp" />
+            <IconButton
+              @trigger="$store.dispatch('showPage', {page_name: 'sidebar'})"
+              icon="bars"
+              class="sp" />
             <TextButton
               @trigger="$store.dispatch('showPage', {page_name: 'preview'})"
               button_name="プレビュー"
