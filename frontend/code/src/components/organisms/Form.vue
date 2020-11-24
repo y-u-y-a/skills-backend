@@ -9,10 +9,12 @@
       <!-- end slot -->
       <div class="form-footer">
         <NuxtLink :to="pre_link" class="pre">
-          <font-awesome-icon icon="angle-double-left" />前へ
+          <Icon icon="angle-double-left" />
+          前へ
         </NuxtLink>
         <NuxtLink :to="next_link" class="next">
-          次へ<font-awesome-icon icon="angle-double-right" />
+          次へ
+          <Icon icon="angle-double-right" />
         </NuxtLink>
       </div>
     </div>

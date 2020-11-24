@@ -1,31 +1,33 @@
 // break points
 $bp: 650px;
+
 // colors
 $white: #FFF;
-$sand: #f7ab40;
-$pink: #e3165c;
-$light-pink: #fbdbf0;
-$dark-blue: #020b40;
-$blue: #2f45d2;
-$light-blue: #dcebfe;
 $gray: #bfbfbf;
 $black: #424242;
+$clearness-black: rgba(0,0,0,0.8);
+
+$pink: #e3165c;
+$light-pink: #fbdbf0;
 
 $light-brown: #9d8975;
 $brown :#685745;
 $dark-brown: #402a12;
-$modal-black: rgba(0,0,0,0.8);
 
+$dark-blue: #020b40;
+$blue: #2f45d2;
+$light-blue: #dcebfe;
 
 // white
 .c-white{ color: $white; }
 .bg-white{ background: $white; }
-// brown
-.c-brown{ color: $brown; }
-.bg-brown{ background: $brown; }
 // gray
 .c-gray{ color: $gray; }
 .bg-gray{ background: $gray; }
 // black
 .c-black{ color: $black; }
 .bg-black{ background: $black; }
+
+// brown
+.c-brown{ color: $brown; }
+.bg-brown{ background: $brown; }

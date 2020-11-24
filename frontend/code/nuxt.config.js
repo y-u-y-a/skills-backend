@@ -44,6 +44,7 @@ export default {
   },
   // FontAwesome
   fontawesome: {
+    component: 'Icon',
     imports: [
       {
         set: '@fortawesome/free-solid-svg-icons',

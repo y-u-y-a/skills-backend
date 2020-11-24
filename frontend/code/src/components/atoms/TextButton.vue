@@ -1,8 +1,8 @@
 <template>
   <button @click="$emit('trigger')" type="button">
-    <font-awesome-icon v-if="before_icon" :icon="before_icon" />
+    <Icon v-if="before_icon" :icon="before_icon" />
     {{ button_name }}
-    <font-awesome-icon v-if="after_icon" :icon="after_icon" />
+    <Icon v-if="after_icon" :icon="after_icon" />
     </button>
 </template>
 

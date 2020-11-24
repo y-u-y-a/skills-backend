@@ -1,6 +1,6 @@
 <template>
   <button @click="$emit('trigger')" type="button">
-    <font-awesome-icon :icon="icon" />
+    <Icon :icon="icon" />
   </button>
 </template>
 
