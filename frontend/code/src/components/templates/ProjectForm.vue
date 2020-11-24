@@ -1,21 +1,24 @@
 <template>
-  <div class="contents">
-    <div class="form">
-      <div class="form-title">
-        {{ form_title }}
-      </div>
-      <!-- Page(Template)ごとに切替 -->
-      <slot name="content"></slot>
-      <!-- end slot -->
-      <div class="form-footer">
-        <NuxtLink :to="pre_link" class="pre">
-          <Icon icon="angle-double-left" />
-          前へ
-        </NuxtLink>
-        <NuxtLink :to="next_link" class="next">
-          次へ
-          <Icon icon="angle-double-right" />
-        </NuxtLink>
+  <div>
+    <PageNav />
+    <div class="contents">
+      <div class="form">
+        <div class="form-title">
+          {{ form_title }}
+        </div>
+        <!-- Page(Template)ごとに切替 -->
+        <slot name="content"></slot>
+
+        <div class="form-footer">
+          <NuxtLink :to="pre_link" class="pre">
+            <Icon icon="angle-double-left" />
+            前へ
+          </NuxtLink>
+          <NuxtLink :to="next_link" class="next">
+            次へ
+            <Icon icon="angle-double-right" />
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
