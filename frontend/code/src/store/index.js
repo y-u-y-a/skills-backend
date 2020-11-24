@@ -1,25 +1,30 @@
 export const state = () => ({
   APP_NAME: process.env.PROJECT_NAME,
-  is_modal: false,
+  is_preview: false,
+  is_sidebar: false
 });
 
 export const getters = {
-  is_modal(state) {
-    return state.is_modal;
+  is_preview(state) {
+    return state.is_preview;
+  },
+  is_sidebar(state) {
+    return state.is_sidebar;
   }
 }
 
 export const mutations = {
-  switchModal(state, bool) {
-    state.is_modal = bool;
-  }
+  switchPage(state, {bool, page_name}) {
+    if (page_name == 'preview') state.is_preview = bool;
+    if (page_name == 'sidebar') state.is_sidebar = bool;
+  },
 }
 
 export const actions = {
-  openModal({commit}) {
-    commit('switchModal', true);
+  showPage({commit}, {page_name}) {
+    commit('switchPage', {bool: true, page_name: page_name});
   },
-  closeModal({commit}) {
-    commit('switchModal', false);
+  hiddenPage({commit}, {page_name}) {
+    commit('switchPage', {bool: false, page_name: page_name});
   }
 }

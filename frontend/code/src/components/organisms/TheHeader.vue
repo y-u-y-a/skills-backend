@@ -12,36 +12,20 @@
           <template v-slot:content>
             <IconButton icon="eye" class="sp" />
             <IconButton icon="bars" class="sp" />
-            <TextButton @trigger="openModal" button_name="プレビュー" class="pc" />
-            <TextButton button_name="設定" class="pc" />
+            <TextButton
+              @trigger="$store.dispatch('showPage', {page_name: 'preview'})"
+              button_name="プレビュー"
+              class="pc" />
+            <TextButton
+              @trigger="$store.dispatch('showPage', {page_name: 'sidebar'})"
+              button_name="設定"
+              class="pc" />
           </template>
         </NavList>
       </div>
     </header>
-    <!-- Modal -->
-    <transition name="modal">
-      <Modal v-if="is_modal">
-        <template v-slot:content>
-          <h2>プレビュー</h2>
-        </template>
-      </Modal>
-    </transition><!-- end Modal -->
   </div>
 </template>
-
-<script>
-import { mapGetters, mapActions } from 'vuex';
-
-export default {
-  computed: {
-    ...mapGetters(['is_modal']),
-  },
-
-  methods: {
-    ...mapActions(['openModal']),
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 header {

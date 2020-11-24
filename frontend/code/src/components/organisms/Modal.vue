@@ -1,27 +1,27 @@
 <template>
-  <div @click="$store.dispatch('closeModal')" class="modal-window">
+  <div
+    @click.self="$store.dispatch('hiddenPage', {page_name: page_name})" class="modal-window">
     <slot name="content"></slot>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+  props: [
+    'page_name'
+  ]
+}
+</script>
+
+<style lang="scss" scoped>
 .modal-window{
-  z-index: 9999;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:$modal-black;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
   cursor: pointer;
-}
-// For transition
-.modal-enter,
-.modal-leave-to {
-  opacity: 0;
-}
-.modal-enter-active,
-.modal-leave-active {
-  transition: opacity 0.2s;
 }
 </style>
