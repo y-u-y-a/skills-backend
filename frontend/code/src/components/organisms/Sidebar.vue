@@ -23,10 +23,6 @@ export default {
     return {
       menu_list: [
         {
-          name: 'プロフィール設定',
-          icon: 'user-alt'
-        },
-        {
           name: 'メール・パスワード',
           icon: 'key'
         },

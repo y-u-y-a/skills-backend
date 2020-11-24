@@ -8,6 +8,7 @@
   border: 1px solid $pink;
   background-color: $light-pink;
   transition: 0.2s;
+  cursor: pointer;
 }
 @mixin fontColor {
   color: $brown;
