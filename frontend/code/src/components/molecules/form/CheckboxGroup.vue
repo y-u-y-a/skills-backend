@@ -4,7 +4,12 @@
     <div class="form-checkbox">
       <template v-for="(v, index) in val_list">
         <label :key="index" :for="index">
-          <input type="checkbox" :value="v" :name="keyname" :id="index">
+          <input
+            @change="emitter"
+            :name="name"
+            :value="v"
+            :id="index"
+            type="checkbox">
           {{ v }}
           </label>
       </template>
@@ -16,10 +21,27 @@
 export default {
   props: [
     'label',
+    'name',
     'val_list',
-    'keyname',
     "placeholder"
-  ]
+  ],
+  data() {
+    return {
+      vals: [],
+    }
+  },
+  methods: {
+    emitter(e) {
+      if (e.target.checked) {
+        this.vals.push(e.target.value);
+      }
+      else {
+        // Extract if unchecked
+        this.vals = this.vals.filter((v) => v !== e.target.value);
+      }
+      this.$emit('input', this.vals);
+    }
+  }
 }
 </script>
 
@@ -45,7 +67,7 @@ export default {
       transition: 0.2s;
     }
     input {
-      display: none;
+      // display: none;
     }
   }
 }

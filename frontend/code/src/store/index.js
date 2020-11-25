@@ -1,3 +1,5 @@
+export const strict = false
+
 export const state = () => ({
   APP_NAME: process.env.PROJECT_NAME,
   is_preview: false,
