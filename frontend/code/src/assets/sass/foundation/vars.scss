@@ -1,21 +1,18 @@
 // break points
 $bp: 650px;
 
-// colors
+// Default
 $white: #FFF;
+$light-gray: #e1e0e0;
 $gray: #bfbfbf;
 $black: #424242;
-
+// Accent
 $pink: #e3165c;
 $light-pink: #fbdbf0;
-
+// Base
 $light-brown: #9d8975;
 $brown :#685745;
 $dark-brown: #402a12;
-
-$dark-blue: #020b40;
-$blue: #2f45d2;
-$light-blue: #dcebfe;
 
 // white
 .c-white{ color: $white; }
