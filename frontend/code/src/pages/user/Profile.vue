@@ -95,7 +95,6 @@ export default {
     ...mapActions('user', ['insertProfile']),
     registerProfile() {
       this.insertProfile({profile: this.profile});
-      // location.reload();
     }
   }
 }

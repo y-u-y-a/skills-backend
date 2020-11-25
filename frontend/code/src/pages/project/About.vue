@@ -3,20 +3,60 @@
     <PageNav />
     <Form form_title="案件情報を入力">
       <template v-slot:content>
-        <InputGroup label="案件名" placeholder="xxxxのシステム開発" />
+        <InputGroup
+          v-model="project_name"
+          label="案件名"
+          placeholder="xxxxのシステム開発" />
         <div class="row">
           <SelectGroup
+            v-model="position"
             label="ポジション"
             :val_list="['PG', 'SE', 'PL', 'PM']"
             class="mr-4" />
           <SelectGroup
+            v-model="member_counts"
             label="チーム人数"
             :val_list="['1〜5', '6〜', '15〜', '20〜']"
             class="mr-4" />
         </div>
-        <InputGroup label="案件の業種" placeholder="広告" />
+        <InputGroup
+          v-model="industry_type"
+          label="案件の業種"
+          placeholder="広告" />
         <FormFooter pre_link="/" next_link="/project/Period" />
       </template>
     </Form>
   </div>
 </template>
+
+<script>
+import { mapMutations } from 'vuex';
+export default {
+  computed: {
+    project_name: {
+      get() { this.$store.state.project.project_name },
+      set(val) { this.setProjectName(val) }
+    },
+    position: {
+      get() { this.$store.state.project.position },
+      set(val) { this.setPosition(val) }
+    },
+    member_counts: {
+      get() { this.$store.state.project.member_counts },
+      set(val) { this.setMemberCounts(val) }
+    },
+    industry_type: {
+      get() { this.$store.state.project.industry_type },
+      set(val) { this.setIndustryType(val) }
+    },
+  },
+  methods: {
+    ...mapMutations('project', [
+      'setProjectName',
+      'setPosition',
+      'setMemberCounts',
+      'setIndustryType',
+    ])
+  }
+}
+</script>
