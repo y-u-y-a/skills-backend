@@ -3,6 +3,7 @@
     <FormLabel :label="label" />
     <input
       @input="emitter"
+      @keydown.enter="emitter"
       :value="value"
       :placeholder="placeholder"
       type="text">
@@ -14,12 +15,14 @@ export default {
   props: [
     'label',
     'value',
-    'placeholder'
+    'placeholder',
   ],
   methods: {
     emitter(e) {
-      // 親側ではv-modelでOK(=@input+:value)
-      this.$emit('input', e.target.value);
+      console.log(e)
+      // 親側ではv-model(= @input + :value)でOK
+      if (e.type == 'input') this.$emit('input', e.target.value);
+      if (e.type == 'keydown') this.$emit('keydownEnter');
     }
   }
 }
