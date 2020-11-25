@@ -6,33 +6,53 @@
         <div class="box">
           <InputGroup
             v-model="tmp_os"
+            @keydownEnter="add('os')"
             label="OS"
-            @keydownEnter="add"
             class="input-group" />
-          <div>
-            <Tag v-for="v in $store.state.project.os"
-            :key="v"
-            @click="remove"
-            :value="v"
-            class="tag" />
-          </div>
+          <TagBox
+            :val_list="$store.state.project.os"
+            @click="remove" />
         </div>
-        <InputGroup
-          v-model="tmp_db"
-          label="DB"
-          class="input-group" />
-        <InputGroup
-          v-model="tmp_lang"
-          label="言語"
-          class="input-group" />
-        <InputGroup
-          v-model="tmp_fw"
-          label="FW"
-          class="input-group" />
-        <InputGroup
-          v-model="tmp_tool"
-          label="ツール"
-          class="input-group" />
+        <div class="box">
+          <InputGroup
+            v-model="tmp_db"
+            @keydownEnter="add('db')"
+            label="DB"
+            class="input-group" />
+          <TagBox
+            :val_list="$store.state.project.db"
+            @click="remove" />
+        </div>
+        <div class="box">
+          <InputGroup
+            v-model="tmp_lang"
+            @keydownEnter="add('lang')"
+            label="言語"
+            class="input-group" />
+          <TagBox
+            :val_list="$store.state.project.lang"
+            @click="remove" />
+        </div>
+        <div class="box">
+          <InputGroup
+            v-model="tmp_fw"
+            @keydownEnter="add('fw')"
+            label="FW"
+            class="input-group" />
+          <TagBox
+            :val_list="$store.state.project.fw"
+            @click="remove" />
+        </div>
+        <div class="box">
+          <InputGroup
+            v-model="tmp_tool"
+            @keydownEnter="add('tool')"
+            label="ツール"
+            class="input-group" />
+          <TagBox
+            :val_list="$store.state.project.tool"
+            @click="remove" />
+        </div>
         <FormFooter pre_link="/project/Work" next_link="/" />
       </template>
     </Form>
@@ -53,12 +73,31 @@ export default {
   },
   methods: {
     ...mapMutations('project', ['setDev', 'unsetDev']),
-    add() {
-      this.setDev({os: this.tmp_os});
-      this.tmp_os = null;
+    add(current) {
+      if (current == 'os') {
+        this.setDev({os: this.tmp_os});
+        this.tmp_os = null;
+      };
+      if (current == 'db') {
+        this.setDev({db: this.tmp_db});
+        this.tmp_db = null;
+      }
+      if (current == 'lang') {
+        this.setDev({lang: this.tmp_lang});
+        this.tmp_lang = null;
+      };
+      if (current == 'fw') {
+        this.setDev({fw: this.tmp_fw});
+        this.tmp_fw = null;
+      }
+      if (current == 'tool') {
+        this.setDev({tool: this.tmp_tool});
+        this.tmp_tool = null;
+      };
     },
     remove(val) {
-      this.unsetDev({os: val});
+      console.log(val);
+      // if(os) this.unsetDev({os: val});
     },
   }
 }
