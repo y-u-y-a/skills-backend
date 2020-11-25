@@ -77,11 +77,11 @@ export default {
       'unsetOS', 'unsetDB', 'unsetLang', 'unsetFW', 'unsetTool',
     ]),
     add(type) {
-      if (type == 'os') this.setOS(this.tmp_os);
-      if (type == 'db') this.setDB(this.tmp_db);
-      if (type == 'lang') this.setLang(this.tmp_lang);
-      if (type == 'fw') this.setFW(this.tmp_fw);
-      if (type == 'tool') this.setTool(this.tmp_tool);
+      if (type == 'os') this.setOS(this.tmp_os); this.tmp_os = null;
+      if (type == 'db') this.setDB(this.tmp_db); this.tmp_db = null;
+      if (type == 'lang') this.setLang(this.tmp_lang); this.tmp_lang = null;
+      if (type == 'fw') this.setFW(this.tmp_fw); this.tmp_fw = null;
+      if (type == 'tool') this.setTool(this.tmp_tool); this.tmp_tool = null;
     },
     remove(val, type) {
       if(type == 'os') this.unsetOS(val);

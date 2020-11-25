@@ -75,19 +75,19 @@ export default {
   data() {
     return {
       profile: {
-        last_name: null,
-        first_name: null,
-        gender: null,
+        last_name: '鈴木',
+        first_name: '一郎',
+        gender: '男性',
         birth: {
-          year: null,
-          month: null,
-          day: null
+          year: '1990',
+          month: '12',
+          day: '04'
         },
-        email: null,
-        phone_number: null,
-        station: null,
+        email: 'hoge@gmail.com',
+        phone_number: '000-1111-3333',
+        station: '丸ノ内線/竹橋駅',
         share_link: null,
-        pr: null
+        pr: '自己PRの文章。自己PRの文章。自己PRの文章。自己PRの文章。自己PRの文章。'
       }
     }
   },

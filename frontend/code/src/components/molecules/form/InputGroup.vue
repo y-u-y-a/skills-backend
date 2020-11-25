@@ -32,10 +32,9 @@ export default {
   @include column;
   padding-bottom: 2rem;
   input {
+    @include formComponent;
     height: 2rem;
     padding: 0 0.5rem;
-    border-radius: 5px;
-    border: 1px solid $gray;
   }
 }
 </style>

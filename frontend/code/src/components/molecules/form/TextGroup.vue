@@ -31,9 +31,8 @@ export default {
   @include column;
   padding-bottom: 2rem;
   textarea {
+    @include formComponent;
     padding: 0 0.5rem;
-    border-radius: 5px;
-    border: 1px solid $gray;
   }
 }
 </style>

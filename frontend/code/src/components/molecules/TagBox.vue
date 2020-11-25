@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="row align-items-center flex-wrap">
     <Tag v-for="v in val_list"
       :key="v"
       @click="emitter(v)"

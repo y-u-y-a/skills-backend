@@ -29,10 +29,8 @@ export default {
   min-width: 6rem;
   padding-bottom: 2rem;
   select {
-    @include fontColor;
+    @include formComponent;
     height: 2rem;
-    border-radius: 5px;
-    border: 1px solid $gray;
   }
   select:hover {
     opacity: 0.6;
