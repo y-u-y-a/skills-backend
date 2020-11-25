@@ -1,16 +1,20 @@
 import axios from 'axios';
 
 export const state = () => ({
+  // About
   title: null,
   position: null,
   member_counts: null,
   industry_type: null,
+  // Work
   process: [],
   detail: null,
+  // Period
   period: {
     start: null,
     end: null
   },
+  // Develop
   os: ['Mac', 'windows', 'Linux', 'Ubuntu', 'CentOS7'],
   db: ['MySQL', 'PostgresQL', 'NoSQL', 'oracle'],
   lang: ['Python', 'JavaScript', 'Go'],

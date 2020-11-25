@@ -1,5 +1,8 @@
 export default {
   srcDir: 'src/',
+  generate: {
+    dir: 'public'
+  },
   head: {
     title: 'Skills',
     htmlAttrs:{ lang: 'ja'},
