@@ -9,7 +9,7 @@
 export default {
   props: ['value'],
   methods: {
-    emitter(e) {
+    emitter() {
       this.$emit('click', this.value);
     }
   }

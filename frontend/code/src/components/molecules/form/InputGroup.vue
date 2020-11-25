@@ -19,7 +19,6 @@ export default {
   ],
   methods: {
     emitter(e) {
-      console.log(e)
       // 親側ではv-model(= @input + :value)でOK
       if (e.type == 'input') this.$emit('input', e.target.value);
       if (e.type == 'keydown') this.$emit('keydownEnter');
