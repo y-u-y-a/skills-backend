@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const state = () => ({
-  project_name: null,
+  title: null,
   position: null,
   member_counts: null,
   industry_type: null,
@@ -23,7 +23,7 @@ export const getters = {
 
 export const mutations = {
   // About
-  setProjectName: (state, val) => state.project_name = val,
+  setTitle: (state, val) => state.title = val,
   setPosition: (state, val) => state.position = val ,
   setMemberCounts: (state, val) => state.member_counts = val,
   setIndustryType: (state, val) => state.industry_type = val,

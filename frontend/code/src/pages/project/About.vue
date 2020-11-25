@@ -4,7 +4,7 @@
     <Form form_title="案件情報を入力">
       <template v-slot:content>
         <InputGroup
-          v-model="project_name"
+          v-model="title"
           label="案件名"
           placeholder="xxxxのシステム開発" />
         <div class="row">
@@ -33,9 +33,9 @@
 import { mapMutations } from 'vuex';
 export default {
   computed: {
-    project_name: {
-      get() { this.$store.state.project.project_name },
-      set(val) { this.setProjectName(val) }
+    title: {
+      get() { this.$store.state.project.title },
+      set(val) { this.setTitle(val) }
     },
     position: {
       get() { this.$store.state.project.position },
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     ...mapMutations('project', [
-      'setProjectName',
+      'setTitle',
       'setPosition',
       'setMemberCounts',
       'setIndustryType',
