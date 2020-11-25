@@ -7,6 +7,10 @@ export const state = () => ({
   industry_type: null,
   process: [],
   detail: null,
+  period: {
+    start: null,
+    end: null
+  }
 });
 
 export const getters = {
@@ -31,6 +35,12 @@ export const mutations = {
     state.industry_type = val
   },
   // Period
+  setPeriod(state, {start=null, end=null}) {
+    console.log(start)
+    console.log(end)
+    if(start) state.period.start = start;
+    if(end) state.period.end = end;
+  },
   // Work
   setProcess(state, vals) {
     console.log(vals)
