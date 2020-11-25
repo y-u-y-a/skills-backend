@@ -4,14 +4,14 @@
     <div class="form-checkbox">
       <template v-for="(v, index) in val_list">
         <label :key="index" :for="index">
+          {{ v }}
           <input
             @change="emitter"
             :name="name"
             :value="v"
             :id="index"
             type="checkbox">
-          {{ v }}
-          </label>
+        </label>
       </template>
     </div>
   </div>
@@ -34,10 +34,12 @@ export default {
     emitter(e) {
       if (e.target.checked) {
         this.vals.push(e.target.value);
+        e.target.parentNode.classList.add('checked');
       }
       else {
         // Extract if unchecked
         this.vals = this.vals.filter((v) => v !== e.target.value);
+        e.target.parentNode.classList.remove('checked');
       }
       this.$emit('input', this.vals);
     }
@@ -60,14 +62,12 @@ export default {
       border-radius: 5px;
       cursor: pointer;
     }
-    label:hover {
-      color: $white;
-      border-color: $brown;
-      background: $brown;
-      transition: 0.2s;
-    }
     input {
-      // display: none;
+      display: none;
+    }
+    .checked {
+      color: $gray;
+      background-color: $brown;
     }
   }
 }
