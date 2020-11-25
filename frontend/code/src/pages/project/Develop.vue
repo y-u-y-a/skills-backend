@@ -11,7 +11,7 @@
             class="input-group" />
           <TagBox
             :val_list="$store.state.project.os"
-            @click="remove" />
+            @click="remove($event, 'os')" />
         </div>
         <div class="box">
           <InputGroup
@@ -21,7 +21,7 @@
             class="input-group" />
           <TagBox
             :val_list="$store.state.project.db"
-            @click="remove" />
+            @click="remove($event, 'db')" />
         </div>
         <div class="box">
           <InputGroup
@@ -31,7 +31,7 @@
             class="input-group" />
           <TagBox
             :val_list="$store.state.project.lang"
-            @click="remove" />
+            @click="remove($event, 'lang')" />
         </div>
         <div class="box">
           <InputGroup
@@ -41,7 +41,7 @@
             class="input-group" />
           <TagBox
             :val_list="$store.state.project.fw"
-            @click="remove" />
+            @click="remove($event, 'fw')" />
         </div>
         <div class="box">
           <InputGroup
@@ -51,7 +51,7 @@
             class="input-group" />
           <TagBox
             :val_list="$store.state.project.tool"
-            @click="remove" />
+            @click="remove($event, 'tool')" />
         </div>
         <FormFooter pre_link="/project/Work" next_link="/" />
       </template>
@@ -73,31 +73,34 @@ export default {
   },
   methods: {
     ...mapMutations('project', ['setDev', 'unsetDev']),
-    add(current) {
-      if (current == 'os') {
+    add(type) {
+      if (type == 'os') {
         this.setDev({os: this.tmp_os});
         this.tmp_os = null;
-      };
-      if (current == 'db') {
+      }
+      if (type == 'db') {
         this.setDev({db: this.tmp_db});
         this.tmp_db = null;
       }
-      if (current == 'lang') {
+      if (type == 'lang') {
         this.setDev({lang: this.tmp_lang});
         this.tmp_lang = null;
-      };
-      if (current == 'fw') {
+      }
+      if (type == 'fw') {
         this.setDev({fw: this.tmp_fw});
         this.tmp_fw = null;
       }
-      if (current == 'tool') {
+      if (type == 'tool') {
         this.setDev({tool: this.tmp_tool});
         this.tmp_tool = null;
-      };
+      }
     },
-    remove(val) {
-      console.log(val);
-      // if(os) this.unsetDev({os: val});
+    remove(val, type) {
+      if(type == 'os') this.unsetDev({os: val});
+      if(type == 'db') this.unsetDev({db: val});
+      if(type == 'lang') this.unsetDev({lang: val});
+      if(type == 'fw') this.unsetDev({fw: val});
+      if(type == 'tool') this.unsetDev({tool: val});
     },
   }
 }

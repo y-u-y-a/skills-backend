@@ -12,10 +12,10 @@ export const state = () => ({
     end: null
   },
   os: ['Mac', 'windows', 'Linux', 'Ubuntu', 'CentOS7'],
-  db: [],
-  lang: [],
-  fw: [],
-  tool: [],
+  db: ['MySQL', 'PostgresQL', 'NoSQL', 'oracle'],
+  lang: ['Python', 'JavaScript', 'Go'],
+  fw: ['Vue.js', 'Laravel', 'Django', 'Docker'],
+  tool: ['Slack', 'ChatWork', 'Asana'],
 });
 
 export const getters = {
@@ -56,7 +56,6 @@ export const mutations = {
   },
   // Develop
   setDev(state, {os=null, db=null, lang=null, fw=null, tool=null}) {
-    console.log(os, db, lang, fw, tool)
     if(os) state.os.push(os);
     if(db) state.db.push(db);
     if(lang) state.lang.push(lang);
@@ -64,7 +63,6 @@ export const mutations = {
     if(tool) state.tool.push(tool);
   },
   unsetDev(state, {os=null, db=null, lang=null, fw=null, tool=null}) {
-    console.log(os, db, lang, fw, tool);
     if(os) {
       let index = state.os.indexOf(os);
       if (index > -1) state.os.splice(index, 1);
