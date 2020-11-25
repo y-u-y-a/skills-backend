@@ -23,66 +23,44 @@ export const getters = {
 
 export const mutations = {
   // About
-  setProjectName(state, val) {
-    console.log(val)
-    state.project_name = val
-  },
-  setPosition(state, val) {
-    console.log(val)
-    state.position = val
-  },
-  setMemberCounts(state, val) {
-    console.log(val)
-    state.member_counts = val
-  },
-  setIndustryType(state, val) {
-    console.log(val)
-    state.industry_type = val
-  },
+  setProjectName: (state, val) => state.project_name = val,
+  setPosition: (state, val) => state.position = val ,
+  setMemberCounts: (state, val) => state.member_counts = val,
+  setIndustryType: (state, val) => state.industry_type = val,
   // Period
   setPeriod(state, {start=null, end=null}) {
-    console.log(start, end)
     if(start) state.period.start = start;
     if(end) state.period.end = end;
   },
   // Work
-  setProcess(state, vals) {
-    console.log(vals)
-    state.process = vals
-  },
-  setDetail(state, val) {
-    console.log(val)
-    state.detail = val
-  },
+  setProcess: (state, vals) => state.process = vals,
+  setDetail: (state, val) => state.detail = val,
   // Develop
-  setDev(state, {os=null, db=null, lang=null, fw=null, tool=null}) {
-    if(os) state.os.push(os);
-    if(db) state.db.push(db);
-    if(lang) state.lang.push(lang);
-    if(fw) state.fw.push(fw);
-    if(tool) state.tool.push(tool);
+  setOS: (state, val) => state.os.push(val),
+  setDB: (state, val) => state.db.push(val),
+  setLang: (state, val) => state.lang.push(val),
+  setFW: (state, val) => state.fw.push(val),
+  setTool: (state, val) => state.tool.push(val),
+
+  unsetOS:(state, val) => {
+    let i = state.os.indexOf(val);
+    if (i > -1) state.os.splice(i, 1);
   },
-  unsetDev(state, {os=null, db=null, lang=null, fw=null, tool=null}) {
-    if(os) {
-      let index = state.os.indexOf(os);
-      if (index > -1) state.os.splice(index, 1);
-    }
-    if(db) {
-      let index = state.db.indexOf(db);
-      if (index > -1) state.db.splice(index, 1);
-    }
-    if(lang) {
-      let index = state.lang.indexOf(lang);
-      if (index > -1) state.lang.splice(index, 1);
-    }
-    if(fw) {
-      let index = state.fw.indexOf(fw);
-      if (index > -1) state.fw.splice(index, 1);
-    }
-    if(tool) {
-      let index = state.tool.indexOf(tool);
-      if (index > -1) state.tool.splice(index, 1);
-    }
+  unsetDB:(state, val) => {
+    let i = state.db.indexOf(val);
+    if (i > -1) state.db.splice(i, 1);
+  },
+  unsetLang:(state, val) => {
+    let i = state.lang.indexOf(val);
+    if (i > -1) state.lang.splice(i, 1);
+  },
+  unsetFW:(state, val) => {
+    let i = state.fw.indexOf(val);
+    if (i > -1) state.fw.splice(i, 1);
+  },
+  unsetTool:(state, val) => {
+    let i = state.tool.indexOf(val);
+    if (i > -1) state.tool.splice(i, 1);
   },
 }
 

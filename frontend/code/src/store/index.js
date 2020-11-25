@@ -7,12 +7,8 @@ export const state = () => ({
 });
 
 export const getters = {
-  is_preview(state) {
-    return state.is_preview;
-  },
-  is_sidebar(state) {
-    return state.is_sidebar;
-  }
+  is_preview: state => state.is_preview,
+  is_sidebar: state => state.is_sidebar,
 }
 
 export const mutations = {

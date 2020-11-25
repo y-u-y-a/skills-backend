@@ -72,35 +72,23 @@ export default {
     }
   },
   methods: {
-    ...mapMutations('project', ['setDev', 'unsetDev']),
+    ...mapMutations('project', [
+      'setOS', 'setDB', 'setLang', 'setFW', 'setTool',
+      'unsetOS', 'unsetDB', 'unsetLang', 'unsetFW', 'unsetTool',
+    ]),
     add(type) {
-      if (type == 'os') {
-        this.setDev({os: this.tmp_os});
-        this.tmp_os = null;
-      }
-      if (type == 'db') {
-        this.setDev({db: this.tmp_db});
-        this.tmp_db = null;
-      }
-      if (type == 'lang') {
-        this.setDev({lang: this.tmp_lang});
-        this.tmp_lang = null;
-      }
-      if (type == 'fw') {
-        this.setDev({fw: this.tmp_fw});
-        this.tmp_fw = null;
-      }
-      if (type == 'tool') {
-        this.setDev({tool: this.tmp_tool});
-        this.tmp_tool = null;
-      }
+      if (type == 'os') this.setOS(this.tmp_os);
+      if (type == 'db') this.setDB(this.tmp_db);
+      if (type == 'lang') this.setLang(this.tmp_lang);
+      if (type == 'fw') this.setFW(this.tmp_fw);
+      if (type == 'tool') this.setTool(this.tmp_tool);
     },
     remove(val, type) {
-      if(type == 'os') this.unsetDev({os: val});
-      if(type == 'db') this.unsetDev({db: val});
-      if(type == 'lang') this.unsetDev({lang: val});
-      if(type == 'fw') this.unsetDev({fw: val});
-      if(type == 'tool') this.unsetDev({tool: val});
+      if(type == 'os') this.unsetOS(val);
+      if(type == 'db') this.unsetDB(val);
+      if(type == 'lang') this.unsetLang(val);
+      if(type == 'fw') this.unsetFW(val);
+      if(type == 'tool') this.unsetTool(val);
     },
   }
 }
