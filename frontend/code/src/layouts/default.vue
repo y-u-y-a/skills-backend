@@ -28,6 +28,7 @@ import { mapState } from 'vuex';
 
 export default {
   computed: {
+    // 変更を監視する必要があるためmapで呼び出し
     ...mapState(['is_preview', 'is_sidebar']),
   }
 }
