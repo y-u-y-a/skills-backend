@@ -72,7 +72,7 @@ export default {
     padding: 1rem 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     svg {
       margin-right: 0.5rem;
