@@ -13,15 +13,15 @@
         PDFダウンロード、共有リンク発行ができます。
       </p>
     </div>
-    <NuxtLink to="/user/profile">
-      プロフィール入力を始める
-    </NuxtLink>
-    <NuxtLink to="/project/About">
-      案件の入力を始める
-    </NuxtLink>
-    <NuxtLink to="/">
-      使い方をみる
-    </NuxtLink>
+    <BorderLink
+      link_name="プロフィール入力を始める"
+      link="/user/Profile" />
+    <BorderLink
+      link_name="案件の入力を始める"
+      link="/project/About" />
+    <BorderLink
+      link_name="使い方をみる"
+      link="/" />
   </div>
 </template>
 
