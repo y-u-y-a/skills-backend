@@ -59,6 +59,7 @@ export default {
   // 環境変数
   env: {
     PROJECT_NAME: 'Skills',
+    FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
   },
   // FontAwesome
   fontawesome: {
@@ -74,25 +75,23 @@ export default {
       }
     ]
   },
-  // 参照：https://axios.nuxtjs.org/options
-  axios: {
-      proxy: true
-  },
-  // CORS, 本番対策('https://qiita.com/api/v2/')
-  // localhost:3000/api/v2/」にアクセスすると,
-  // localhost:3000」を「https://qiita.com」へプロキシする
-  proxy: {
-      '/api': {
-        target: 'https://qiita.com',
-        pathRewrite: { '/api': '/api/v2' }
-      }
-  },
-  // エイリアス
+  // // 参照：https://axios.nuxtjs.org/options
+  // axios: {
+  //     proxy: true
+  // },
+  // // CORS, 本番対策('https://qiita.com/api/v2/')
+  // // localhost:3000/api/v2/」にアクセスすると,
+  // // localhost:3000」を「https://qiita.com」へプロキシする
+  // proxy: {
+  //     '/api': {
+  //       target: 'https://qiita.com',
+  //       pathRewrite: { '/api': '/api/v2' }
+  //     }
+  // },
+  //  Alias
   build: {
     extend (config, ctx) {
-      config.resolve.alias['@atoms'] = '~/components/atoms';
-      config.resolve.alias['@molecules'] = '~/components/molecules';
-      config.resolve.alias['@organisms'] = '~/components/organisms';
+      config.resolve.alias['@plugins'] = '~/plugins';
     }
   },
   // 404
