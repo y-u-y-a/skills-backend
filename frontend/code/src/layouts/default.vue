@@ -24,11 +24,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['is_preview', 'is_sidebar']),
+    ...mapState(['is_preview', 'is_sidebar']),
   }
 }
 </script>

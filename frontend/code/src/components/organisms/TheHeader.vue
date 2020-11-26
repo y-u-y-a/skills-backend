@@ -10,22 +10,24 @@
         </h1>
         <NavList class="nav">
           <template v-slot:content>
-            <IconButton
-              @trigger="$store.dispatch('showPage', {page_name: 'preview'})"
-              icon="eye"
-              class="sp" />
-            <IconButton
-              @trigger="$store.dispatch('showPage', {page_name: 'sidebar'})"
-              icon="bars"
-              class="sp" />
-            <TextButton
-              @trigger="$store.dispatch('showPage', {page_name: 'preview'})"
-              button_name="プレビュー"
-              class="pc" />
-            <TextButton
-              @trigger="$store.dispatch('showPage', {page_name: 'sidebar'})"
-              button_name="設定"
-              class="pc" />
+            <!-- ログイン時 -->
+            <template v-if="$store.state.user.login_user">
+              <BorderButton
+                @trigger="$store.commit('togglePage', {page_name: 'preview'})"
+                button_name="プレビュー"
+                sp_icon="eye" />
+              <BorderButton
+                @trigger="$store.commit('togglePage', {page_name: 'sidebar'})"
+                button_name="設定"
+                sp_icon="bars" />
+            </template>
+            <!-- 未ログイン時 -->
+            <template v-else:>
+              <BorderLink
+                link_name="ログインする"
+                link="/user/Login"
+                sp_icon="sign-in-alt" />
+            </template>
           </template>
         </NavList>
       </div>

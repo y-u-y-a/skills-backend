@@ -1,6 +1,6 @@
 <template>
   <div
-    @click.self="$store.dispatch('hiddenPage', {page_name: page_name})" class="modal-window">
+    @click.self="$store.commit('togglePage', {page_name: page_name})" class="modal-window">
     <slot name="content"></slot>
   </div>
 </template>

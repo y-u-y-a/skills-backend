@@ -3,26 +3,18 @@ export const strict = false
 export const state = () => ({
   APP_NAME: process.env.PROJECT_NAME,
   is_preview: false,
-  is_sidebar: false
+  is_sidebar: false,
 });
 
 export const getters = {
-  is_preview: state => state.is_preview,
-  is_sidebar: state => state.is_sidebar,
 }
 
 export const mutations = {
-  switchPage(state, {bool, page_name}) {
-    if (page_name == 'preview') state.is_preview = bool;
-    if (page_name == 'sidebar') state.is_sidebar = bool;
+  togglePage(state, {page_name}) {
+    if (page_name == 'preview') state.is_preview = !state.is_preview;
+    if (page_name == 'sidebar') state.is_sidebar = !state.is_sidebar;
   },
 }
 
 export const actions = {
-  showPage({commit}, {page_name}) {
-    commit('switchPage', {bool: true, page_name: page_name});
-  },
-  hiddenPage({commit}, {page_name}) {
-    commit('switchPage', {bool: false, page_name: page_name});
-  }
 }
