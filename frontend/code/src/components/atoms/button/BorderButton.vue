@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('trigger')" type="button">
+  <button @click="$emit('click')" type="button">
     <!-- PC -->
     <span class="pc">
       <Icon v-if="before_icon" :icon="before_icon" />

@@ -1,5 +1,5 @@
 <template>
-  <button @click="$emit('trigger')" type="button">
+  <button @click="$emit('click')" type="button">
     {{ button_name }}
   </button>
 </template>

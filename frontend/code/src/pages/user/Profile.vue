@@ -66,7 +66,7 @@
     <template v-slot:bottom-content>
       <div class="row justify-content-center pb-1">
         <BigButton
-          @trigger="registerProfile"
+          @click="registerProfile"
           button_name="登録する" />
       </div>
     </template>
