@@ -1,6 +1,6 @@
 <template>
   <div class="column pb-1">
-    <FormLabel :label="label" />
+    <FormLabel v-if="label" :label="label" />
     <input
       @input="emitter"
       @keydown.enter="emitter"
