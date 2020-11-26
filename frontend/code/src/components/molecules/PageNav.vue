@@ -13,16 +13,16 @@
     </ul>
     <NavList class="font-12">
       <template v-slot:content>
-        <TextButton
+        <BorderButton
           button_name="共有リンク取得"
           after_icon="link"
-          class="pc ml-05" />
-        <TextButton
+          sp_icon="link"
+          class="ml-05" />
+        <BorderButton
           button_name="ダウンロード"
           after_icon="download"
-          class="pc ml-05" />
-        <IconButton icon="link" class="sp ml-05" />
-        <IconButton icon="download" class="sp ml-05" />
+          sp_icon="download"
+          class="ml-05" />
       </template>
     </NavList>
   </div>
