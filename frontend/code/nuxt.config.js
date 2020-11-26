@@ -31,10 +31,25 @@ export default {
 
   modules: [
     // ['bootstrap-vue/nuxt', {css: false}],
+    '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     'nuxt-fontawesome',
   ],
+  // PWA
+  pwa: {
+    icon: {
+      source: '@/static/icon.png'
+    },
+    manifest: {
+      name: 'Skills',
+      lang: 'ja',
+    },
+    workbox: {
+      dev: true, //開発環境でもPWA
+    },
+  },
+  // Sass
   styleResources: {
     scss: [
       '@/assets/sass/foundation/vars.scss',
