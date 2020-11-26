@@ -76,6 +76,7 @@ export default {
       'setOS', 'setDB', 'setLang', 'setFW', 'setTool',
       'unsetOS', 'unsetDB', 'unsetLang', 'unsetFW', 'unsetTool',
     ]),
+    // storeに保存
     add(type) {
       if (type == 'os') this.setOS(this.tmp_os); this.tmp_os = null;
       if (type == 'db') this.setDB(this.tmp_db); this.tmp_db = null;
@@ -83,6 +84,7 @@ export default {
       if (type == 'fw') this.setFW(this.tmp_fw); this.tmp_fw = null;
       if (type == 'tool') this.setTool(this.tmp_tool); this.tmp_tool = null;
     },
+    // storeから削除
     remove(val, type) {
       if(type == 'os') this.unsetOS(val);
       if(type == 'db') this.unsetDB(val);
@@ -101,14 +103,14 @@ export default {
 .input-group {
   min-width: 300px;
   max-width: 300px;
-  padding-bottom: 1rem;
+  // padding-bottom: 1rem;
   margin-right: 1rem;
 }
 .tag {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
-@media screen and (max-width: $bp) {
+@include media(sm) {
   .box {
     @include column;
     padding-bottom: 0.5rem;

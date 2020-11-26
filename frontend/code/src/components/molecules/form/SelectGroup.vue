@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="select-group column pb-1">
     <FormLabel :label="label" />
     <select @change="emitter">
       <option v-for="v in val_list" :key="v" :value="v">
@@ -24,10 +24,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form-group {
-  @include column;
+.select-group {
   min-width: 6rem;
-  padding-bottom: 2rem;
   select {
     @include formComponent;
     height: 2rem;

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="column pb-1">
     <FormLabel :label="label" />
     <div class="form-checkbox">
       <template v-for="(v, index) in val_list">
@@ -48,27 +48,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form-group {
-  @include column;
-  padding-bottom: 2rem;
-  .form-checkbox {
-    @include row($wrap: wrap, $wrap_align: between);
-    label {
-      @include formComponent;
-      width: 6rem;
-      padding: 0.5rem;
-      text-align: center;
-      margin: 0 1rem 0.5rem 0;
-      cursor: pointer;
-    }
-    input {
-      display: none;
-    }
-    .checked {
-      color: $gray;
-      border-color: $brown;
-      background-color: $brown;
-    }
+.form-checkbox {
+  @include row($wrap: wrap, $wrap_align: between);
+  label {
+    @include formComponent;
+    width: 6rem;
+    padding: 0.5rem;
+    text-align: center;
+    margin: 0 1rem 0.5rem 0;
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+  .checked {
+    color: $gray;
+    border-color: $brown;
+    background-color: $brown;
   }
 }
 </style>

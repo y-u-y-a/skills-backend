@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="column pb-1">
     <FormLabel :label="label" />
     <textarea
       @input="emitter"
@@ -27,12 +27,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form-group {
-  @include column;
-  padding-bottom: 2rem;
-  textarea {
-    @include formComponent;
-    padding: 0 0.5rem;
-  }
+textarea {
+  @include formComponent;
+  padding: 0 0.5rem;
 }
 </style>

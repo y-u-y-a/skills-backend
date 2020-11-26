@@ -8,14 +8,16 @@
             v-model="start_period"
             label="開始日"
             placeholder="年/月/日"
-            class="w-45" />
+            class="w-45 pb-2" />
           <InputGroup
             v-model="end_period"
             label="終了日"
             placeholder="年/月/日"
-            class="w-45" />
+            class="w-45 pb-2" />
         </div>
-        <FormFooter pre_link="/project/About" next_link="/project/Work" />
+        <FormFooter
+          pre_link="/project/About"
+          next_link="/project/Work" />
       </template>
     </Form>
   </div>

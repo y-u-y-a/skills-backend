@@ -6,12 +6,12 @@
         <CheckboxGroup
           v-model="process"
           label="作業項目"
-          :val_list="['調査', '要件定義', '基本設計', '詳細設計', '製造', 'テスト', '運用保守']"
-          class="pb-2" />
+          :val_list="['調査', '要件定義', '基本設計', '詳細設計', '製造', 'テスト', '運用保守']" />
         <TextGroup
           v-model="detail"
           label="業務詳細"
-          placehokder="業務の詳細について記述してください。" />
+          placehokder="業務の詳細について記述してください。"
+          class="pb-2" />
         <FormFooter pre_link="/project/Period" next_link="/project/Develop" />
       </template>
     </Form>

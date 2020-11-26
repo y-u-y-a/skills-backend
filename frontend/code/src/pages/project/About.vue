@@ -6,8 +6,9 @@
         <InputGroup
           v-model="title"
           label="案件名"
-          placeholder="xxxxのシステム開発" />
-        <div class="row">
+          placeholder="xxxxのシステム開発"
+          class="pb-2" />
+        <div class="row pb-1">
           <SelectGroup
             v-model="position"
             label="ポジション"
@@ -22,7 +23,8 @@
         <InputGroup
           v-model="industry_type"
           label="案件の業種"
-          placeholder="広告" />
+          placeholder="広告"
+          class="pb-2" />
         <FormFooter pre_link="/" next_link="/project/Period" />
       </template>
     </Form>
