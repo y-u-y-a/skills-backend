@@ -9,8 +9,7 @@
         <span class="pc">
           Skillsは、ブラウザ上でスキルシート作成ができるサービスです。<br>
         </span>
-        作成後は、<br class="sp">
-        PDFダウンロード、共有リンク発行ができます。
+        作成後は、PDFダウンロード・共有リンク発行が可能！
       </p>
     </div>
     <BorderLink

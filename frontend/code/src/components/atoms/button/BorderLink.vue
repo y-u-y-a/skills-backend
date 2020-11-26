@@ -3,12 +3,13 @@
     <!-- PC -->
     <span class="pc">
       <Icon v-if="before_icon" :icon="before_icon" />
-        {{ link_name }}
-        <Icon v-if="after_icon" :icon="after_icon" />
+      {{ link_name }}
+      <Icon v-if="after_icon" :icon="after_icon" />
     </span>
     <!-- SP -->
     <span class="sp">
       <Icon v-if="sp_icon" :icon="sp_icon" />
+      <span v-else-if="!sp_icon">{{ link_name }}</span>
     </span>
   </NuxtLink>
 </template>
