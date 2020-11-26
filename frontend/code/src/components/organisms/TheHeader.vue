@@ -11,7 +11,7 @@
         <NavList class="nav">
           <template v-slot:content>
             <!-- ログイン時 -->
-            <template v-if="$store.state.user.login_user">
+            <template v-if="$store.state.auth.login_user">
               <BorderButton
                 @click="$store.commit('togglePage', {page_name: 'preview'})"
                 button_name="プレビュー"
@@ -25,7 +25,7 @@
             <template v-else:>
               <BorderLink
                 link_name="ログインする"
-                link="/user/Login"
+                link="/auth/Login"
                 sp_icon="sign-in-alt" />
             </template>
           </template>

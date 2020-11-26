@@ -3,8 +3,8 @@
     <div class="auth-form">
       <header>
         <h2>{{ title }}</h2>
-        <a v-if="title=='ログイン'" href="/user/Register">新規登録はこちら</a>
-        <a v-if="title=='新規登録'" href="/user/Login">ログインはこちら</a>
+        <a v-if="title=='ログイン'" href="/auth/Register">新規登録はこちら</a>
+        <a v-if="title=='新規登録'" href="/auth/Login">ログインはこちら</a>
       </header>
       <div v-if="title == '新規登録'" class="agreement">
         ※利用開始をもって

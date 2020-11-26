@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const state = () => ({
-  login_user: null,
   profile: {
     last_name: null,
     first_name: null,
