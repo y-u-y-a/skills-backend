@@ -13,38 +13,35 @@
           placeholder="太郎"
           class="w-30" />
       </div>
-      <div class="row align-items-end">
+      <div class="row flex-wrap">
         <SelectGroup
           v-model="profile.gender"
           label="性別"
           :val_list="['未入力', '男性', '女性']"
           class="mr-4" />
-        <SelectGroup
-          v-model="profile.birth.year"
-          label="生年月日"
-          :val_list="['1990']"
-          class="mr-1" />
-        <SelectGroup
-          v-model="profile.birth.month"
-          :val_list="['04']"
-          class="mr-1" />
-        <SelectGroup
-          v-model="profile.birth.day"
-          :val_list="['10']" />
-          <!-- <InputGroup label="最終学歴" placeholder="例：XXX大学 卒" /> -->
+          <div class="row align-items-end">
+            <SelectGroup
+              v-model="profile.birth.year"
+              label="生年月日"
+              :val_list="['1990']"
+              class="mr-1" />
+            <SelectGroup
+              v-model="profile.birth.month"
+              :val_list="['04']"
+              class="mr-1" />
+            <SelectGroup
+              v-model="profile.birth.day"
+              :val_list="['10']" />
+          </div>
       </div>
-      <div class="row">
-        <InputGroup
-          v-model="profile.email"
-          label="メールアドレス"
-          placeholder="例：skills@gmail.com"
-          class="w-30 mr-2" />
-        <InputGroup
-          v-model="profile.phone_number"
-          label="電話番号"
-          placeholder="例：000-1234-5678"
-          class="w-30" />
-      </div>
+      <InputGroup
+        v-model="profile.email"
+        label="メールアドレス"
+        placeholder="例：skills@gmail.com" />
+      <InputGroup
+        v-model="profile.phone_number"
+        label="電話番号"
+        placeholder="例：000-1234-5678" />
       <InputGroup
         v-model="profile.station"
         label="最寄駅"
@@ -57,13 +54,13 @@
         v-model="profile.pr"
         label="PR"
         placeholder="自己PRを入力してください。" />
-      <FormFooter class="row justify-content-center">
-        <template v-slot:content>
-          <BigButton
-            @trigger="registerProfile"
-            button_name="登録する" />
-        </template>
-      </FormFooter>
+    </template>
+    <template v-slot:bottom-content>
+      <div class="row justify-content-center pb-1">
+        <BigButton
+          @trigger="registerProfile"
+          button_name="登録する" />
+      </div>
     </template>
   </Form>
 </template>

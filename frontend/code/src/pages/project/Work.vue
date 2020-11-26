@@ -10,9 +10,12 @@
         <TextGroup
           v-model="detail"
           label="業務詳細"
-          placehokder="業務の詳細について記述してください。"
-          class="pb-2" />
-        <FormFooter pre_link="/project/Period" next_link="/project/Develop" />
+          placehokder="業務の詳細について記述してください。" />
+      </template>
+      <template v-slot:bottom-content>
+        <PageNation
+          pre_link="/project/Period"
+          next_link="/project/Develop" />
       </template>
     </Form>
   </div>

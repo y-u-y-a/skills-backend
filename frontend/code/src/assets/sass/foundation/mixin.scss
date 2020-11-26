@@ -6,9 +6,16 @@ $breakPoints : (
 // 初期値をmd
 @mixin media($bp:md){
   @media #{map-get($breakPoints, $bp)}{
-    @content;
+  @content;
   }
 }
+@include media(md) {
+  .sp {display: none;}
+}
+@include media(sm) {
+  .pc {display: none;}
+}
+
 // Form部品で共通
 @mixin formComponent {
   font-size: 16px;

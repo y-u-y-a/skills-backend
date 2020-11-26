@@ -12,16 +12,16 @@ img {
 p {
   font-size: 16px;
 }
-.contents {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 0.5rem;
+
+.d-none {
+  display: none;
 }
-// SP
-@media screen and (max-width: $bp) {
-  .pc{ display: none; }
+.d-block {
+  display: block;
 }
-// PC
-@media screen and (min-width: $bp) {
-  .sp{ display: none; }
+.d-inline {
+  display: inline;
+}
+.d-inline-block {
+  display: inline-block;
 }

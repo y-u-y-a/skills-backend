@@ -1,6 +1,6 @@
 <template>
   <footer class="pc">
-    <div class="footer-wrapper contents">
+    <div class="footer-wrapper container">
       <ul class="row justify-content-between">
         <li>
           <a href="/Rule">利用規約</a>

@@ -3,7 +3,7 @@
     <PageNav />
     <Form form_title="開発環境を入力">
       <template v-slot:content>
-        <div class="box">
+        <div class="form-group">
           <InputGroup
             v-model="tmp_os"
             @keydownEnter="add('os')"
@@ -13,7 +13,7 @@
             :val_list="$store.state.project.os"
             @click="remove($event, 'os')" />
         </div>
-        <div class="box">
+        <div class="form-group">
           <InputGroup
             v-model="tmp_db"
             @keydownEnter="add('db')"
@@ -23,7 +23,7 @@
             :val_list="$store.state.project.db"
             @click="remove($event, 'db')" />
         </div>
-        <div class="box">
+        <div class="form-group">
           <InputGroup
             v-model="tmp_lang"
             @keydownEnter="add('lang')"
@@ -33,7 +33,7 @@
             :val_list="$store.state.project.lang"
             @click="remove($event, 'lang')" />
         </div>
-        <div class="box">
+        <div class="form-group">
           <InputGroup
             v-model="tmp_fw"
             @keydownEnter="add('fw')"
@@ -43,7 +43,7 @@
             :val_list="$store.state.project.fw"
             @click="remove($event, 'fw')" />
         </div>
-        <div class="box">
+        <div class="form-group">
           <InputGroup
             v-model="tmp_tool"
             @keydownEnter="add('tool')"
@@ -53,7 +53,11 @@
             :val_list="$store.state.project.tool"
             @click="remove($event, 'tool')" />
         </div>
-        <FormFooter pre_link="/project/Work" next_link="/" />
+      </template>
+      <template v-slot:bottom-content>
+        <PageNation
+          pre_link="/project/Work"
+          next_link="/" />
       </template>
     </Form>
   </div>
@@ -97,21 +101,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.box {
+.form-group {
   @include row;
-}
-.input-group {
-  min-width: 300px;
-  max-width: 300px;
-  // padding-bottom: 1rem;
-  margin-right: 1rem;
-}
-.tag {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  .input-group {
+    min-width: 300px;
+    max-width: 300px;
+    margin-right: 1rem;
+  }
+  .tag {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 }
 @include media(sm) {
-  .box {
+  .form-group {
     @include column;
     padding-bottom: 0.5rem;
   }

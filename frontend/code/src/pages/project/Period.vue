@@ -3,19 +3,21 @@
     <PageNav />
     <Form form_title="期間を入力">
       <template v-slot:content>
-        <div class="row justify-content-between">
+        <div class="form-calender">
           <InputGroup
             v-model="start_period"
             label="開始日"
             placeholder="年/月/日"
-            class="w-45 pb-2" />
+            class="input-group" />
           <InputGroup
             v-model="end_period"
             label="終了日"
             placeholder="年/月/日"
-            class="w-45 pb-2" />
+            class="input-group" />
         </div>
-        <FormFooter
+      </template>
+      <template v-slot:bottom-content>
+        <PageNation
           pre_link="/project/About"
           next_link="/project/Work" />
       </template>
@@ -41,3 +43,15 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@include media(md) {
+  .form-calender {
+    @include row(around);
+    .input-group {
+      width: 45%;
+    }
+  }
+
+}
+</style>

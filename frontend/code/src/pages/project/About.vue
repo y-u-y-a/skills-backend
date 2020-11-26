@@ -8,24 +8,27 @@
           label="案件名"
           placeholder="xxxxのシステム開発"
           class="pb-2" />
-        <div class="row pb-1">
+        <div class="row">
           <SelectGroup
             v-model="position"
             label="ポジション"
             :val_list="['PG', 'SE', 'PL', 'PM']"
-            class="mr-4" />
+            class="mr-4 pb-2" />
           <SelectGroup
             v-model="member_counts"
             label="チーム人数"
             :val_list="['1〜5', '6〜', '15〜', '20〜']"
-            class="mr-4" />
+            class="mr-4 pb-2" />
         </div>
         <InputGroup
           v-model="industry_type"
           label="案件の業種"
-          placeholder="広告"
-          class="pb-2" />
-        <FormFooter pre_link="/" next_link="/project/Period" />
+          placeholder="広告" />
+      </template>
+      <template v-slot:bottom-content>
+        <PageNation
+          pre_link="/"
+          next_link="/project/Period" />
       </template>
     </Form>
   </div>

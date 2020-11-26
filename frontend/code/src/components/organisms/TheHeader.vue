@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <div class="contents row justify-content-between align-items-center">
+      <div class="container row justify-content-between align-items-center">
         <h1>
           <NuxtLink to="/">
             {{ $store.state.APP_NAME }}

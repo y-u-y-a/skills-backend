@@ -6,7 +6,7 @@
       :value="value"
       :placeholder="placeholder"
       cols="30"
-      rows="10">
+      rows="6">
     </textarea>
   </div>
 </template>

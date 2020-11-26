@@ -1,5 +1,5 @@
 <template>
-  <div class="page-nav contents">
+  <div class="page-nav container">
     <ul class="row align-items-end">
       <li v-for="n in 20" :key="n">
         <template v-if="n == 2">

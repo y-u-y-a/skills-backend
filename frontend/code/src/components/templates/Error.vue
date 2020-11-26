@@ -1,5 +1,5 @@
 <template>
-  <main class="contents">
+  <main class="container">
     <section>
       <h2>{{ title }}</h2>
       <h3>{{ subtitle }}</h3>

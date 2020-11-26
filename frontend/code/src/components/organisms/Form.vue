@@ -1,11 +1,12 @@
 <template>
-  <div class="contents">
+  <div class="container">
     <div class="form">
       <div class="form-title">
         {{ form_title }}
       </div>
-      <!-- Page(Template)ごとに切替 -->
+      <!-- Pageごとに切替 -->
       <slot name="content"></slot>
+      <slot name="bottom-content"></slot>
     </div>
   </div>
 </template>
@@ -21,7 +22,6 @@ export default {
   background: $white;
   padding: 0 1rem;
   &-title {
-    @include fontColor;
     padding: 2rem 0;
     font-size: 20px;
     font-weight: bold;
