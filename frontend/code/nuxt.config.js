@@ -92,6 +92,7 @@ export default {
   build: {
     extend (config, ctx) {
       config.resolve.alias['@plugins'] = '~/plugins';
+      config.resolve.alias['@pages'] = '~/pages';
     }
   },
   // 404

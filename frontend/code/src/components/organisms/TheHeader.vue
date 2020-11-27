@@ -22,7 +22,7 @@
                 sp_icon="bars" />
             </template>
             <!-- 未ログイン時 -->
-            <template v-else:>
+            <template v-else-if="!$store.state.auth.login_user">
               <BorderLink
                 link_name="ログインする"
                 link="/auth/Login"
