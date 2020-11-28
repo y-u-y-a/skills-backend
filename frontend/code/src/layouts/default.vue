@@ -1,20 +1,18 @@
 <template>
-  <div class="default-container">
+  <div class="base-wrapper">
     <TheHeader />
-    <main>
+    <main class="base-container">
       <Nuxt />
     </main>
     <TheFooter />
-    <!-- Hidden Pages -->
+
     <transition name="fade">
-      <!-- Preview -->
-      <Modal v-if="is_preview" page_name="preview">
+      <Modal v-if="is_preview" page_name="preview"><!-- Preview -->
         <template v-slot:content>
           <Preview />
         </template>
       </Modal>
-      <!-- Sidebar -->
-      <Modal v-if="is_sidebar" page_name="sidebar">
+      <Modal v-if="is_sidebar" page_name="sidebar"><!-- Sidebar -->
         <template v-slot:content>
           <Sidebar />
         </template>
@@ -37,17 +35,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-// Fixed Footer
-.default-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-@media screen and (max-width: $bp) {
-  main {
-    padding-bottom: 4rem;
-  }
-}
-</style>

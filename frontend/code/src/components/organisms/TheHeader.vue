@@ -13,11 +13,11 @@
             <!-- ログイン時 -->
             <template v-if="$store.state.auth.login_user">
               <BorderButton
-                @click="$store.commit('togglePage', {page_name: 'preview'})"
+                @click="$store.commit('togglePage', 'preview')"
                 button_name="プレビュー"
                 sp_icon="eye" />
               <BorderButton
-                @click="$store.commit('togglePage', {page_name: 'sidebar'})"
+                @click="$store.commit('togglePage', 'sidebar')"
                 button_name="設定"
                 sp_icon="bars" />
             </template>
