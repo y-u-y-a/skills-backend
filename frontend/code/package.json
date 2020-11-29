@@ -16,6 +16,8 @@
     "@nuxtjs/pwa": "^3.2.2",
     "bootstrap-vue": "^2.19.0",
     "core-js": "^3.6.5",
+    "firebase": "^8.1.1",
+    "js-cookie": "^2.2.1",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.6",
     "nuxt-fontawesome": "^0.4.0",

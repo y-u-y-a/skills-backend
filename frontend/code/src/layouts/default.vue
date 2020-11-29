@@ -8,18 +8,19 @@
 
     <transition name="fade">
       <!-- Preview -->
-      <Modal v-if="is_preview" page_name="preview">
+      <Modal v-if="$store.state.common.is_preview" page_name="preview">
         <template v-slot:content>
           <Preview />
         </template>
       </Modal>
       <!-- Sidebar -->
-      <Modal v-if="is_sidebar" page_name="sidebar">
+      <Modal v-if="$store.state.common.is_sidebar" page_name="sidebar">
         <template v-slot:content>
           <Sidebar />
         </template>
       </Modal>
     </transition>
+    <Loading v-if="$store.state.common.loading" />
   </div>
 </template>
 
@@ -28,10 +29,7 @@ import { mapState } from 'vuex';
 import Preview from '@pages/project/Preview';
 
 export default {
-  computed: {
-    // 変更を監視する必要があるためmapで呼び出し
-    ...mapState('common', ['is_preview', 'is_sidebar']),
-  },
+  middleware: 'authenticated',
   components: {
     Preview: Preview,
   },

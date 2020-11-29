@@ -1,4 +1,5 @@
 export default {
+  ssr: false,
   srcDir: 'src/',
   generate: {
     dir: 'public'
