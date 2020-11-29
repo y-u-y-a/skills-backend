@@ -1,5 +1,3 @@
-import { Auth } from '@plugins/firebase';
-
 export const strict = false;
 
 export const state = () => ({

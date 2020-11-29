@@ -11,7 +11,7 @@
         <NavList class="nav">
           <template v-slot:content>
             <!-- ログイン時 -->
-            <template v-if="$store.state.auth.login">
+            <template v-if="$store.state.auth.login_user">
               <BorderButton
                 @click="$store.commit('common/togglePage', 'preview')"
                 button_name="プレビュー"
@@ -22,7 +22,7 @@
                 sp_icon="bars" />
             </template>
             <!-- 未ログイン時 -->
-            <template v-else-if="!$store.state.auth.login">
+            <template v-else-if="!$store.state.auth.login_user">
               <BorderLink
                 link_name="ログインする"
                 link="/auth/Login"
@@ -42,17 +42,12 @@ header {
 h1 {
   font-size: 24px;
   font-weight: bold;
-  a {
-    color: $dark-brown;
-  }
   span {
     font-size: 12px;
   }
 }
-.nav {
-  button {
-    margin-left: 0.5rem;
-    font-size: 16px;
-  }
+.nav button {
+  margin-left: 0.5rem;
+  font-size: 16px;
 }
 </style>

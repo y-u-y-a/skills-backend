@@ -1,14 +1,18 @@
 <template>
-  <AuthForm title="新規登録">
-    <template v-slot:sns>
+  <AuthForm
+    title="新規登録"
+    toggle_link="/auth/Login"
+    toggle_name="ログイン">
+    <template v-slot:top>
       <SnsButtonList class="pb-2" />
     </template>
     <template v-slot:form>
-      <InputGroup v-model="email" placeholder="メールアドレス" />
-      <InputGroup v-model="password" placeholder="パスワード" />
+      <InputGroup v-model="params.email" placeholder="メールアドレス" />
+      <InputGroup v-model="params.password" placeholder="パスワード" />
       <InputGroup placeholder="パスワード確認" />
+      <Agreement />
       <BigButton
-        @click="register"
+        @click="$store.dispatch('auth/signIn', params)"
         button_name="新規登録する" />
     </template>
   </AuthForm>
@@ -18,17 +22,11 @@
 export default {
   data() {
     return {
-      email: 'testuser@gmail.com',
-      password: 'testuser',
+      params: {
+        email: 'testuser@gmail.com',
+        password: 'testuser',
+      }
     }
   },
-  methods: {
-    register() {
-      this.$store.dispatch('auth/signUp', {
-        email: this.email,
-        password: this.password
-      });
-    }
-  }
 }
 </script>

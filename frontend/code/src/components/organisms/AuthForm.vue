@@ -3,27 +3,19 @@
     <div class="auth-form">
       <header>
         <h2>{{ title }}</h2>
-        <a v-if="title=='ログイン'" href="/auth/Register">新規登録はこちら</a>
-        <a v-if="title=='新規登録'" href="/auth/Login">ログインはこちら</a>
+        <HeadsUpLink
+          :title="`${toggle_name}はこちら`"
+          :to="toggle_link" />
       </header>
-      <div v-if="title == '新規登録'" class="agreement">
-        ※利用開始をもって
-        <a href="#">利用規約</a>と
-        <a href="#">プライバシーポリシー</a>に同意したものとみなします。
-      </div>
-      <slot name="sns"></slot><!-- slot -->
+      <!-- slot -->
+      <slot name="top"></slot>
       <main class="column">
         <span style="margin-bottom:1rem;text-align:center;font-size:12px;">
           メールアドレスで{{ title }}する場合
         </span>
-        <slot name="form"></slot><!-- slot -->
-        <a href="#" class="mb-1">パスワードを忘れた方はこちら</a>
+        <!-- slot -->
+        <slot name="form"></slot>
       </main>
-      <footer v-if="title == 'ログイン'" class="agreement">
-        ※利用開始をもって
-        <a href="#">利用規約</a>と
-        <a href="#">プライバシーポリシー</a>に同意したものとみなします。
-      </footer>
     </div>
   </div>
 </template>
@@ -32,6 +24,8 @@
 export default {
   props: [
     'title',
+    'toggle_name',
+    'toggle_link',
   ]
 }
 </script>
@@ -50,18 +44,5 @@ header {
     font-size: 20px;
     font-weight: bold;
   }
-}
-.agreement {
-  padding-bottom: 1rem;
-  font-size: 12px;
-  line-height: 1rem;
-}
-a {
-  font-size: 12px;
-  color: $gray;
-  text-decoration: underline;
-}
-a:hover {
-  opacity: 0.5;
 }
 </style>
