@@ -4,9 +4,12 @@
       <SnsButtonList class="pb-2" />
     </template>
     <template v-slot:form>
-      <InputGroup v-model="email" placeholder="メールアドレス" />
-      <InputGroup v-model="password" placeholder="パスワード" />
-      <BigButton @click="login" button_name="ログインする" class="mb-2" />
+      <InputGroup v-model="params.email" placeholder="メールアドレス" />
+      <InputGroup v-model="params.password" placeholder="パスワード" />
+      <BigButton
+        @click="$store.dispatch('auth/signIn', params)"
+        button_name="ログインする"
+        class="mb-2" />
     </template>
   </AuthForm>
 </template>
@@ -15,17 +18,11 @@
 export default {
   data() {
     return {
-      email: 'testuser@gmail.com',
-      password: 'testuser',
+      params: {
+        email: 'testuser@gmail.com',
+        password: 'testuser',
+      }
     }
   },
-  methods: {
-    login() {
-      this.$store.dispatch('auth/signIn', {
-        email: this.email,
-        password: this.password
-      });
-    }
-  }
 }
 </script>

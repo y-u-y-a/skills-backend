@@ -3,13 +3,17 @@
     <div class="sidebar-wrapper">
       <header>
         <Icon
-          @click="$store.commit('togglePage', 'sidebar')"
+          @click="$store.commit('common/togglePage', 'sidebar')"
           icon="times" />
       </header>
       <ul>
         <li v-for="menu in menu_list" :key="menu.name">
           <Icon :icon="menu.icon" />
           {{ menu.name }}
+        </li>
+        <li @click="$store.dispatch('auth/signOut')">
+          <Icon icon="sign-out-alt" />
+          ログアウト
         </li>
       </ul>
     </div>
@@ -29,10 +33,6 @@ export default {
         {
           name: '通知設定',
           icon: 'bell'
-        },
-        {
-          name: 'ログアウト',
-          icon: 'sign-out-alt'
         },
       ],
     }

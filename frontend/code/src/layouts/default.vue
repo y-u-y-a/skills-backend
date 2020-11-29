@@ -7,12 +7,14 @@
     <TheFooter />
 
     <transition name="fade">
-      <Modal v-if="is_preview" page_name="preview"><!-- Preview -->
+      <!-- Preview -->
+      <Modal v-if="is_preview" page_name="preview">
         <template v-slot:content>
           <Preview />
         </template>
       </Modal>
-      <Modal v-if="is_sidebar" page_name="sidebar"><!-- Sidebar -->
+      <!-- Sidebar -->
+      <Modal v-if="is_sidebar" page_name="sidebar">
         <template v-slot:content>
           <Sidebar />
         </template>
@@ -28,10 +30,10 @@ import Preview from '@pages/project/Preview';
 export default {
   computed: {
     // 変更を監視する必要があるためmapで呼び出し
-    ...mapState(['is_preview', 'is_sidebar']),
+    ...mapState('common', ['is_preview', 'is_sidebar']),
   },
   components: {
     Preview: Preview,
   },
-}
+};
 </script>

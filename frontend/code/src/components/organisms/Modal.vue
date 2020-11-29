@@ -1,6 +1,6 @@
 <template>
   <div
-    @click.self="$store.commit('togglePage', page_name)"
+    @click.self="$store.commit('common/togglePage', page_name)"
     class="modal-window">
     <slot name="content"></slot>
   </div>
