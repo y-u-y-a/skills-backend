@@ -24,5 +24,6 @@ export default {
   height: 100%;
   background: rgba(0,0,0,0.8);
   cursor: pointer;
+  overflow: scroll; // 追加
 }
 </style>
