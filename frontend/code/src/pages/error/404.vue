@@ -1,5 +1,5 @@
 <template>
-  <Error
+  <BaseError
     title="Page Not Found."
     subtitle="お探しのページが見つかりません。"
     :messages="`

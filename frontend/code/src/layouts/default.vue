@@ -8,19 +8,20 @@
 
     <transition name="fade">
       <!-- Preview -->
-      <Modal v-if="$store.state.common.is_preview" page_name="preview">
+      <BaseModal v-if="$store.state.common.is_preview" page_name="preview">
         <template v-slot:content>
           <Preview />
         </template>
-      </Modal>
-      <!-- Sidebar -->
-      <Modal v-if="$store.state.common.is_sidebar" page_name="sidebar">
+      </BaseModal>
+      <!-- TheSidebar -->
+      <BaseModal v-if="$store.state.common.is_sidebar" page_name="sidebar">
         <template v-slot:content>
-          <Sidebar />
+          <TheSidebar />
         </template>
-      </Modal>
+      </BaseModal>
     </transition>
-    <Loading v-if="$store.state.common.loading" />
+    <!-- TheLoading -->
+    <TheLoading v-if="$store.state.common.loading" />
   </div>
 </template>
 
