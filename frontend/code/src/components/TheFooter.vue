@@ -1,18 +1,18 @@
 <template>
   <footer class="pc">
     <div class="footer-wrapper container">
-      <ul class="row justify-content-between">
+      <ul>
         <li>
-          <a href="/Rule">利用規約</a>
+          <NuxtLink to="/common/Rule">利用規約</NuxtLink>
         </li>
         <li>
-          <a href="/Privacy">プライバシーポリシー</a>
+          <NuxtLink to="/common/Privacy">プライバシーポリシー</NuxtLink>
         </li>
         <li>
-          <a href="/Contact">お問い合わせ</a>
+          <NuxtLink to="/common/Contact">お問い合わせ</NuxtLink>
         </li>
       </ul>
-      <div class="copy-right">
+      <div class="copyright">
         <small>Skills ©︎ 2020</small>
       </div>
     </div>
@@ -27,14 +27,18 @@ footer {
     @include row(between, center);
   }
   ul {
+    @include row(between);
     padding: 1rem 0;
     a {
       margin-right: 1rem;
       font-size: 14px;
       color: $white;
     }
+    a:hover {
+      opacity: 0.6;
+    }
   }
-  .copy-right {
+  .copyright {
     font-size: 12px;
     color: $white;
   }

@@ -7,9 +7,17 @@
           icon="times" />
       </header>
       <ul>
-        <li v-for="menu in menu_list" :key="menu.name">
-          <Icon :icon="menu.icon" />
-          {{ menu.name }}
+        <li>
+          <a href="/user/Privacy">
+            <Icon icon="key" />
+            メール・パスワード
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <Icon icon="bell" />
+            通知設定
+          </a>
         </li>
         <li @click="$store.dispatch('auth/signOut')">
           <Icon icon="sign-out-alt" />
@@ -19,26 +27,6 @@
     </div>
   </aside>
 </template>
-
-<script>
-
-export default {
-  data() {
-    return {
-      menu_list: [
-        {
-          name: 'メール・パスワード',
-          icon: 'key'
-        },
-        {
-          name: '通知設定',
-          icon: 'bell'
-        },
-      ],
-    }
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .sidebar {
@@ -81,6 +69,9 @@ export default {
   li:hover {
     background: rgba(0,0,0, 0.9);
     transition: 0.2s;
+  }
+  a {
+    color: $white;
   }
 }
 </style>

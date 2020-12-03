@@ -20,7 +20,7 @@
       link="/project/About" />
     <BorderLink
       link_name="使い方をみる"
-      link="/" />
+      link="/common/How" />
   </div>
 </template>
 
