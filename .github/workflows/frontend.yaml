@@ -1,4 +1,4 @@
-name: Skills CI # 任意
+name: Test Deploy # 任意
 
 # pushをトリガー
 on:
