@@ -22,7 +22,8 @@ jobs:
             npm run test
             # npm run generate
       - name: Deploy to Firebase Hosting
-        # uses: w9jds/firebase-action@master
-        run: firebase deploy --token $FIREBASE_TOKEN
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
