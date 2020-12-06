@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest # jobが実行される仮想環境
     steps:
       # [ユーザー名/リポジトリ名]のアクションを実行
-      - name: Deploy Test
+      - name: Checkout
         uses: actions/checkout@v2
+      - name: Deploy Test
         run: npm run test
       # - name: Deploy Test 2
       #   run: |
