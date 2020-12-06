@@ -13,4 +13,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Deploy Test
-        run: npm run test
+        run: echo Deploy Test
