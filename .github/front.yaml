@@ -1,36 +1,18 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy to Firebase Hosting # 任意
 
-name: CI
-
-# Controls when the action will run. 
+# pushをトリガー
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches: [master]
+# stepの集まり, 並列実行(build, test, package, release, deployなど)
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+  deploy: # 任意
+    runs-on: ubuntu-latest # jobが実行される仮想環境
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # [ユーザー名/リポジトリ名]のアクションを実行
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
         run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+        run: npm run test
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
