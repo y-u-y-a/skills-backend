@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting # 任意
+name: Skills CI # 任意
 
 # pushをトリガー
 on:
@@ -12,5 +12,11 @@ jobs:
       # [ユーザー名/リポジトリ名]のアクションを実行
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Deploy Test
-        run: echo Deploy Test
+      - name: Setup node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Exec npm commands
+        run: |
+            npm install
+            npm run test
