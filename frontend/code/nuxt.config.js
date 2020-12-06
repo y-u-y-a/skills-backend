@@ -5,7 +5,7 @@ export default {
     dir: 'public'
   },
   head: {
-    title: 'Skills',
+    title: 'skills',
     htmlAttrs:{ lang: 'ja'},
     meta: [
       { charset: 'utf-8' },
