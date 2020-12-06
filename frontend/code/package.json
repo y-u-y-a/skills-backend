@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "test": "echo Test！",
+    "test": "echo Test・Test！",
     "deploy": "npm run generate && firebase deploy"
   },
   "dependencies": {
