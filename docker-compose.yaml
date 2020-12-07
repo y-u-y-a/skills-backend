@@ -36,27 +36,9 @@ services:
     networks:
       - default
 
-  frontend:
-    container_name: skills_frontend
-    build:
-      context: ./frontend
-      dockerfile: build/Dockerfile.dev
-    volumes:
-      - ./frontend/code:/code
-      - ft_node_modules:/code/node_modules
-      - ft_nuxt:/code/.nuxt
-    ports:
-      - 3000:3000
-    depends_on:
-      - mysql
-    networks:
-      - default
-
 networks:
   default:
     external: false
 volumes:
   mysql-data:
-  bk_node_modules:
-  ft_node_modules:
-  ft_nuxt:
+  node_modules:
