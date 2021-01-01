@@ -10,6 +10,7 @@
     "baseUrl": ".",                           /* Base directory */
     "paths": {                                /* エイリアス */
       "@/*": ["./src/*"],
+      "@config/*": ["./src/config/*"],
       "@controllers/*": ["./src/controllers/*"],
       "@models/*": ["./src/models/*"],
       "@routes/*": ["./src/routes/*"],

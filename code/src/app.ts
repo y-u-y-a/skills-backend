@@ -1,17 +1,20 @@
-import express, { Request, Response, NextFunction } from 'express'
+import express, { ErrorRequestHandler } from 'express'
 import { json } from 'body-parser'
-import taskRoutes from '@/routes/tasks'
+import DBConnect from '@config/database'
+import taskRoutes from '@routes/tasks'
 
+// error handling
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  res.status(500).json({ message: err.message })
+}
+
+DBConnect()
 const app = express()
 
 // to json
 app.use(json())
-
 // set routes
 app.use('/tasks', taskRoutes)
-
-// error handling
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  res.status(500).json({ message: err.message })
-})
+// set error handler
+app.use(errorHandler)
 app.listen(4000)
