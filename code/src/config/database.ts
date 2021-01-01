@@ -9,7 +9,7 @@ export const config = {
   multipleStatements: true, // 複数の命令文実行
 }
 
-const dbConnect = async () => {
+export const dbConnect = async () => {
   // 接続処理
   await createConnection(config)
     .then((conn) => {
@@ -22,4 +22,3 @@ const dbConnect = async () => {
       console.log(rows)
     })
 }
-export default dbConnect
