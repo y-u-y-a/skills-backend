@@ -6,4 +6,4 @@ class errorsController {
     res.status(500).json({ message: err.message })
   }
 }
-export default errorsController
+export default new errorsController()

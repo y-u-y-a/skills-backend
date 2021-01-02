@@ -10,6 +10,8 @@
     "baseUrl": ".",                           /* Base directory */
     "paths": {                                /* エイリアス */
       "@/*": ["./src/*"],
+      "@querys/*": ["./src/graphql/querys/*"],
+      "@mutations/*": ["./src/graphql/mutations/*"],
       },
     // "lib": [],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */

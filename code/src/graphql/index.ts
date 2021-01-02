@@ -1,13 +1,19 @@
 import path from 'path'
 import { importSchema } from 'graphql-import'
 import { makeExecutableSchema } from 'graphql-tools'
-import querys from '@/graphql/querys'
-import mutations from '@/graphql/mutations'
+// Query
+import userQuery from '@querys/userQuery'
+import taskQuery from '@querys/taskQuery'
+import todoQuery from '@querys/todoQuery'
+// Mutation
+import userMutation from '@mutations/userMutation'
 
-const typeDefs = importSchema(path.resolve(__dirname, './schema.gql'))
+const absolutePath = path.resolve(__dirname, './schema.gql')
+const typeDefs = importSchema(absolutePath)
+
 const resolvers = {
-  Query: querys,
-  Mutation: mutations,
+  Query: Object.assign(userQuery, taskQuery, todoQuery),
+  Mutation: Object.assign(userMutation),
 }
 
 export default makeExecutableSchema({
