@@ -1,5 +1,5 @@
 import { RequestHandler } from 'express'
-import { Task } from '@models/task'
+import { Task } from '@/models/task'
 
 // メモリ上の変数
 const Tasks: Task[] = []
