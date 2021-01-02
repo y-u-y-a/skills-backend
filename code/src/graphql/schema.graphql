@@ -1,0 +1,15 @@
+# 型定義
+type User {
+  id: ID
+  name: String
+}
+
+# クエリ
+type Query {
+  users: [User]
+  user(id: Int): User
+}
+
+schema {
+  query: Query
+}
