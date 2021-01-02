@@ -1,0 +1,22 @@
+# ###########
+# 型定義
+# ###########
+type User {
+  id: ID
+  name: String
+}
+
+# ###########
+# Query
+# ###########
+type Query {
+  users: [User]
+  user(id: Int, name: String): User
+}
+
+# ###########
+# Mutation
+# ###########
+type Mutation {
+  createUser(name: String!): User
+}
