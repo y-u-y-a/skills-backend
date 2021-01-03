@@ -8,7 +8,10 @@
   "scripts": {
     "dev": "nodemon -L",
     "prod": "tsc && node dist/app.js",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
+    "migrate:sync": "typeorm schema:sync",
+    "migrate:drop": "typeorm schema:drop",
+    "migrate:prod": "npm run build && typeorm migration:run",
     "fmt": "prettier --write src/**/*.ts",
     "ts-node": "ts-node"
   },
@@ -35,6 +38,7 @@
     "express": "^4.17.1",
     "graphql": "^15.4.0",
     "graphql-import": "^1.0.2",
-    "graphql-tools": "^7.0.2"
+    "graphql-tools": "^7.0.2",
+    "typeorm": "^0.2.29"
   }
 }
