@@ -10,4 +10,6 @@ extend type Query {
 
 extend type Mutation {
   createTask(title: String!): Task
+  updateTask(id: Int, title: String!): Task
+  deleteTask(id: Int): Task
 }
