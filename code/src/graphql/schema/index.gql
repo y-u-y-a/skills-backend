@@ -1,0 +1,16 @@
+# import User, Query, Mutation from "./users.gql"
+# import Task, Query, Mutation from "./tasks.gql"
+
+type Todo {
+  id: ID
+  title: String
+}
+
+type Query {
+  todos: [Todo]
+  todo(id: Int): Todo
+}
+
+type Mutation {
+  createTodo(title: String!): Todo
+}
