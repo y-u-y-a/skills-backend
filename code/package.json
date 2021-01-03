@@ -7,9 +7,9 @@
   "license": "ISC",
   "scripts": {
     "dev": "nodemon -L",
-    "prod": "tsc && node dist/app.js",
+    "prod": "npm run build && node dist/app.js",
     "build": "rm -rf dist && tsc",
-    "migrate:sync": "typeorm schema:sync",
+    "migrate": "typeorm schema:sync",
     "migrate:drop": "typeorm schema:drop",
     "migrate:prod": "npm run build && typeorm migration:run",
     "fmt": "prettier --write src/**/*.ts",
