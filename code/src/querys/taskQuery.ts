@@ -3,11 +3,12 @@ import Task from '@/entity/task'
 export default {
   // 一覧取得
   tasks: async (_: any) => {
-    const allTasks = await Task.find()
-    return allTasks
+    const tasks = await Task.find()
+    return tasks
   },
   // 1件取得
   task: async (_: any, req: any) => {
-    return 'task'
+    const task = await Task.findOne(req.id)
+    return task
   },
 }

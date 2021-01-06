@@ -1,0 +1,28 @@
+type User {
+  id: ID!
+  firstname: String
+  lastname: String
+  email: String
+  password: String
+  gender: Int
+  birthday: String
+  nearStation: String
+  profile: String
+}
+
+extend type Query {
+  users: [User]
+  user(id: Int): User
+}
+
+extend type Mutation {
+  insertUser(
+    firstname: String
+    lastname: String
+    email: String
+    password: String
+    gender: Int
+  ): User
+  updateUser(id: Int!): User
+  deleteUser(id: Int!): User
+}
