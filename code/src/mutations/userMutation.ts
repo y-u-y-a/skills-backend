@@ -1,47 +1,36 @@
 import User from '@/entity/user'
 
-const setParams = (req: any) => {
+const setParams = (input: any) => {
   return {
-    firstname: req.firstname,
-    lastname: req.lastname,
-    email: req.email,
-    password: req.password,
-    gender: req.gender,
-    birthday: req.birthday,
-    nearStation: req.nearStation,
-    profile: req.profile,
+    email: input.email,
+    password: input.password,
+    firstname: input.firstname,
+    lastname: input.lastname,
+    gender: input.gender,
+    birthday: input.birthday,
+    nearStation: input.nearStation,
+    profile: input.profile,
   }
 }
-export default {
-  async insertUser(_: any, req: any) {
-    const params = setParams(req)
-    const userRepo = User.getRepository()
-    return userRepo.save(params)
-    // User.insert(params)
-  },
-  async updateUser(_: any, req: any) {
-    const params = setParams(req)
-    await User.update(req.id, params)
-  },
-  async deleteUser(_: any, req: any) {
-    await User.delete(req.id)
-  },
+
+const setPayload = (user: any) => {
+  return {
+    user,
+  }
 }
 
-// class UserMutation {
-//   async createUser(_: any, req: any) {
-//     const params = setParams(req)
-//     const userRepo = User.getRepository()
-//     return userRepo.save(params)
-//     // User.insert(params)
-//   }
-//   async updateUser(_: any, req: any) {
-//     const params = setParams(req)
-//     await User.update(req.id, params)
-//   }
-//   async deleteUser(_: any, req: any) {
-//     await User.delete(req.id)
-//   }
-// }
-
-// export default UserMutation
+export default {
+  async createUser(_: any, req: any) {
+    const params = setParams(req.input)
+    let user: any = User.getRepository()
+    user = user.save(params)
+    return setPayload(user)
+  },
+  async updateUser(_: any, req: any) {
+    const params = setParams(req.input)
+    await User.update(req.input.id, params)
+  },
+  async deleteUser(_: any, req: any) {
+    await User.delete(req.input.id)
+  },
+}

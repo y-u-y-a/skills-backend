@@ -1,28 +1,48 @@
-type User {
-  id: ID!
-  firstname: String
-  lastname: String
-  email: String
-  password: String
-  gender: Int
-  birthday: String
-  nearStation: String
-  profile: String
-}
-
 extend type Query {
   users: [User]
   user(id: Int): User
 }
 
 extend type Mutation {
-  insertUser(
-    firstname: String
-    lastname: String
-    email: String
-    password: String
-    gender: Int
-  ): User
+  login(input: LoginInput): User
+  createUser(input: CreateUserInput!): CreateUserPayload!
   updateUser(id: Int!): User
   deleteUser(id: Int!): User
+}
+
+type User {
+  id: ID!
+  email: String
+  password: String
+  firstname: String
+  lastname: String
+  gender: Int
+  birthday: String
+  nearStation: String
+  profile: String
+}
+
+"""
+login
+"""
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+"""
+create
+"""
+input CreateUserInput {
+  email: String
+  password: String
+  firstname: String
+  lastname: String
+  gender: Int
+  birthday: String
+  nearStation: String
+  profile: String
+}
+type CreateUserPayload {
+  user: User!
 }

@@ -1,9 +1,9 @@
 import { ErrorRequestHandler } from 'express'
 
-class errorsController {
-  // メソッド
+class Errors {
   serverError: ErrorRequestHandler = (err, req, res, next) => {
     res.status(500).json({ message: err.message })
   }
 }
-export default new errorsController()
+
+export default new Errors()

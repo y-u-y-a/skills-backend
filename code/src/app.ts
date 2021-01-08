@@ -10,13 +10,13 @@ import Errors from '@/libs/Errors'
 const app = express()
 app.use(bodyParser.json())
 app.use(Errors.serverError)
+dbConnect()
 
 // set graphql
 app.use('/graphql', graphqlExpress({ schema }))
-app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
+app.use('/', graphiqlExpress({ endpointURL: '/graphql' }))
 
 // start
-dbConnect()
 app.listen(8000, () => {
   console.log('start Server...')
 })
