@@ -14,12 +14,7 @@ type User {
   id: ID!
   email: String
   password: String
-  firstname: String
-  lastname: String
-  gender: Int
-  birthday: String
-  nearStation: String
-  profile: String
+  name: String
 }
 
 """
@@ -36,12 +31,7 @@ create
 input CreateUserInput {
   email: String
   password: String
-  firstname: String
-  lastname: String
-  gender: Int
-  birthday: String
-  nearStation: String
-  profile: String
+  name: String
 }
 type CreateUserPayload {
   user: User!

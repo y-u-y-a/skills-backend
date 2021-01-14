@@ -1,14 +1,13 @@
-import express from 'express'
-import bodyParser from 'body-parser'
+import express, { json } from 'express'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 
 import schema from '@/graphql'
 import dbConnect from '@/config/database'
-import Errors from '@/middlewares/Errors'
+import Errors from '@/middlewares/errorsHandler'
 
 // setup
 const app = express()
-app.use(bodyParser.json())
+app.use(json())
 app.use(Errors.serverError)
 dbConnect()
 

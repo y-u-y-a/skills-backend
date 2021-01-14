@@ -1,5 +1,4 @@
 # import User, Query, Mutation from "./users.gql"
-# import Task, Query, Mutation from "./tasks.gql"
 
 type Todo {
   id: ID
