@@ -1,32 +1,26 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm'
+import { Entity, Column } from 'typeorm'
+import { IsEmail, MinLength, MaxLength } from 'class-validator'
+import { Unique } from '@/middlewares/validator'
+import Base from '@/entity/base'
 
-@Entity()
-class User extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id?: number
+/**********************************************
+ * @Column optionsはmigrate時に適用する内容を記述
+ * その他はバリデーション時に使用される
+ * name: Rename db column name
+ **********************************************/
+@Entity({ name: 'users' })
+class User extends Base {
+  @Column({ unique: true })
+  @IsEmail()
+  @Unique(User, { message: 'email is already exists.' })
+  email!: string
+
+  @Column()
+  @MinLength(8, { message: 'required more than 8.' })
+  password!: string
 
   @Column({ length: 50 })
-  firstname?: string
-
-  @Column({ length: 50 })
-  lastname?: string
-
-  @Column()
-  email?: String
-
-  @Column()
-  password?: String
-
-  @Column()
-  gender?: number = 0
-
-  @Column({ nullable: true })
-  birthday?: String
-
-  @Column({ nullable: true })
-  nearStation?: String
-
-  @Column({ nullable: true })
-  profile?: String
+  @MaxLength(50, { message: 'required less than 50 characters.' })
+  name!: string
 }
 export default User

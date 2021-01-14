@@ -1,15 +1,16 @@
-import express, { json } from 'express'
+import express, { urlencoded, json } from 'express'
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 
 import schema from '@/graphql'
-import dbConnect from '@/config/database'
+import DB from '@/config/database'
 import Errors from '@/middlewares/errorsHandler'
 
 // setup
 const app = express()
+app.use(urlencoded({ extended: true }))
 app.use(json())
 app.use(Errors.serverError)
-dbConnect()
+DB.connect()
 
 // set graphql
 app.use('/graphql', graphqlExpress({ schema }))

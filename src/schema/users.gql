@@ -1,32 +1,23 @@
+# import Error from "./errors.gql"
+
 extend type Query {
-  index: [User]
+  all: [User]
   find(id: Int): User
 }
-
 extend type Mutation {
-  login(input: LoginInput): User
+  login(input: LoginInput): LoginUserPayload!
   createUser(input: CreateUserInput!): CreateUserPayload!
-  updateUser(id: Int!): User
-  deleteUser(id: Int!): User
+  # updateUser(id: Int!): User
+  # deleteUser(id: Int!): User
 }
-
 type User {
   id: ID!
   email: String
   password: String
   name: String
 }
-
 """
-login
-"""
-input LoginInput {
-  email: String!
-  password: String!
-}
-
-"""
-create
+Create
 """
 input CreateUserInput {
   email: String
@@ -34,5 +25,17 @@ input CreateUserInput {
   name: String
 }
 type CreateUserPayload {
-  user: User!
+  user: User
+  token: String
+  errors: [Error]
+}
+"""
+Login
+"""
+input LoginInput {
+  email: String!
+  password: String!
+}
+type LoginUserPayload {
+  user: User
 }
