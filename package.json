@@ -9,9 +9,10 @@
     "dev": "nodemon -L",
     "prod": "yarn build && node dist/app.js",
     "build": "rm -rf dist && tsc",
-    "migrate:sync": "yarn build && typeorm schema:sync",
-    "migrate:drop": "yarn build && typeorm schema:drop",
-    "migrate:prod": "yarn build && typeorm migration:run",
+    "migrate:up": "yarn typeorm schema:sync",
+    "migrate:down": "yarn typeorm schema:drop",
+    "migrate:create": "yarn typeorm migration:generate --name",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm",
     "fmt": "prettier --write src/**/*.ts",
     "ts-node": "ts-node"
   },

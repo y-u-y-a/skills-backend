@@ -4,10 +4,10 @@ services:
     container_name: skills_mysql
     build:
       context: ./
-      dockerfile: build/mysql/Dockerfile.dev
+      dockerfile: mysql/Dockerfile.dev
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./build/mysql/init:/docker-entrypoint-initdb.d
+      - ./mysql/init:/docker-entrypoint-initdb.d
     environment:
       MYSQL_DATABASE: skills
       MYSQL_USER: test
@@ -23,13 +23,12 @@ services:
     container_name: skills_backend
     build:
       context: ./
-      dockerfile: build/server/Dockerfile.dev
+      dockerfile: Dockerfile.dev
     volumes:
-      # - node_modules:/code/node_modules # ローカルのvolumes
-      - ./code:/code
+      - ./:/code
       - /code/node_modules # マウントで消さないため
     ports:
-      - 4000:4000
+      - 8000:8000
     working_dir: /code
     command: npm run dev
     depends_on:
