@@ -4,7 +4,7 @@ import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 
 import schema from '@/graphql'
 import dbConnect from '@/config/database'
-import Errors from '@/libs/Errors'
+import Errors from '@/middlewares/Errors'
 
 // setup
 const app = express()
