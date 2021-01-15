@@ -5,7 +5,7 @@ import {
 } from '@/middlewares/authentication'
 import User from '@/entity/user'
 
-class UserMutation {
+const userMutation = {
   // create(signUp)
   async createUser(_: any, req: any) {
     const params = setParams(req.input)
@@ -20,7 +20,7 @@ class UserMutation {
     const token = createToken(user) // create token
     const createdUser = await user.save() // insert
     return { user: createdUser, token: token }
-  }
+  },
   // login
   async login(_: any, req: any) {
     const payload = authenticate(req.headers.authentication)
@@ -29,10 +29,11 @@ class UserMutation {
       return { user }
     }
     return { user: null }
-  }
+  },
 }
 
-// FIXME: classに含めたい
+export default userMutation
+
 const setParams = (input: User) => {
   return {
     email: input.email,
@@ -50,5 +51,3 @@ const setErrorPayload = (errors: any) => {
   })
   return { errors: result }
 }
-
-export default new UserMutation()
