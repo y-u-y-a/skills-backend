@@ -1,8 +1,4 @@
-import {
-  encrypt,
-  createToken,
-  authenticate,
-} from '@/middlewares/authentication'
+import { encrypt, createToken } from '@/middlewares/authentication'
 import User from '@/entity/user'
 
 const userMutation = {
@@ -22,13 +18,8 @@ const userMutation = {
     return { user: createdUser, token: token }
   },
   // login
-  async login(_: any, req: any) {
-    const payload = authenticate(req.headers.authentication)
-    const user = await User.findOne({ email: payload.email })
-    if (user && user.password === payload.password) {
-      return { user }
-    }
-    return { user: null }
+  async login(_: any, req: any, authUser: any) {
+    return { user: authUser }
   },
 }
 

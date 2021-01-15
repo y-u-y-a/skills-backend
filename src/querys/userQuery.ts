@@ -4,7 +4,6 @@ const userQuery = {
   // 全件取得
   async all(_: any) {
     const users = await User.find()
-    console.log('発火')
     return users
   },
   // 1件取得
@@ -13,5 +12,4 @@ const userQuery = {
     return user
   },
 }
-
 export default userQuery

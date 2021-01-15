@@ -1,4 +1,3 @@
-import { RequestHandler } from 'express'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import User from '@/entity/user'
@@ -10,13 +9,18 @@ const secret = 'this_is_secret_key'
  * 2回目以降に使用(ブラウザに保存したtokenと'secret'が必要)
  * @param authorization_token authorization in request headers
  */
-export const authenticate = (authorization: any) => {
-  const token = authorization
-  try {
-    const decoded: any = jwt.verify(token, secret)
-    return decoded
-  } catch (err) {
-    return err
+export const authenticate = async (authToken: any) => {
+  if (authToken) {
+    try {
+      const decoded: any = jwt.verify(authToken, secret)
+      let user = await User.findOne({ email: decoded.email })
+      if (user && user.password !== decoded.password) {
+        user = undefined
+      }
+      return user
+    } catch (err) {
+      return err
+    }
   }
 }
 /**
