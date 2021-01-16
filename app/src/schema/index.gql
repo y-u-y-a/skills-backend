@@ -1,9 +1,43 @@
-# import User, Query, Mutation from "./users.gql"
-
 type Query {
-  Query: Query
+  all: [User]
+  find(id: Int): User
 }
-
 type Mutation {
-  Mutation: Mutation
+  login(input: LoginInput): LoginUserPayload!
+  createUser(input: CreateUserInput!): CreateUserPayload!
+  # updateUser(id: Int!): User
+  # deleteUser(id: Int!): User
+}
+type User {
+  id: ID!
+  email: String
+  password: String
+  name: String
+}
+"""
+Create
+"""
+input CreateUserInput {
+  email: String
+  password: String
+  name: String
+}
+type CreateUserPayload {
+  user: User
+  token: String
+  errors: [Error]
+}
+"""
+Login
+"""
+input LoginInput {
+  email: String!
+  password: String!
+}
+type LoginUserPayload {
+  user: User
+}
+type Error {
+  property: String
+  messages: [String]
 }

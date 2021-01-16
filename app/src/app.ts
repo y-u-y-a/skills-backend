@@ -1,6 +1,7 @@
 // import express, { urlencoded, json } from 'express'
+import { createConnection } from 'typeorm'
+import ormConfig from '@/config/ormconfig'
 import server from '@/graphql'
-import DB from '@/config/database'
 // import Errors from '@/middlewares/errorsHandler'
 
 // start(apollo-server-express)
@@ -14,8 +15,8 @@ import DB from '@/config/database'
 // })
 
 // start(apollo-server)
-DB.connect()
-server.listen(8000).then(({ url }) => {
+server.listen(process.env.PORT || 8000).then(async ({ url }) => {
+  await createConnection(ormConfig)
   console.log(url)
   console.log('start Server...')
 })

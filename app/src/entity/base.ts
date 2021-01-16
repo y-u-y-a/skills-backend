@@ -1,3 +1,4 @@
+// コメント
 import {
   Entity,
   BaseEntity,

@@ -1,4 +1,5 @@
 require('dotenv').config()
+import User from '@/entity/user'
 
 const ormConfig: any = {
   type: process.env.DB_DRIVER,
@@ -9,11 +10,11 @@ const ormConfig: any = {
   database: process.env.DB_NAME,
   synchronize: false,
   logging: false,
-  entities: ['./src/entity/*.ts'],
-  migrations: ['./src/migration/*.ts'],
+  entities: [User],
+  migrations: [`./src/migration/*.ts`],
   cli: {
-    entitiesDir: './src/entity',
-    migrationsDir: './src/migration',
+    entitiesDir: `./src/entity`,
+    migrationsDir: `./src/migration`,
   },
 }
 

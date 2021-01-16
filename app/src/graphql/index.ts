@@ -1,15 +1,11 @@
-import path from 'path'
-import { ApolloServer, gql } from 'apollo-server'
-import { importSchema } from 'graphql-import'
+import 'graphql-import-node'
+import { ApolloServer } from 'apollo-server'
 //
 import { authenticate } from '@/middlewares/authentication'
 //
+import typeDefs from '@/schema/index.gql'
 import userQuery from '@/querys/userQuery'
 import userMutation from '@/mutations/userMutation'
-
-// Import schema files
-const schemaPath = path.resolve(__dirname, '../schema/index.gql')
-const typeDefs = gql(importSchema(schemaPath))
 
 // Data access
 const resolvers = {
@@ -28,6 +24,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context,
+  introspection: true, // prod環境でも起動させるため
+  playground: true,
 })
 
 export default server

@@ -4,15 +4,13 @@
 
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
-    "target": "es5",                          /* 書き出すバージョンを指定 */
-    "module": "commonjs",                     /* 同じ？ */
+    "target": "ESNext",                       /* 書き出すバージョンを指定 */
+    "module": "commonJS",                     /* 同じ？ */
     "moduleResolution": "node",
     "baseUrl": ".",                           /* Base directory */
     "paths": {                                /* エイリアス */
       "@/*": ["./src/*"],
-      "@querys/*": ["src/querys/*"],
-      "@mutations/*": ["src/mutations/*"],
-      },
+    },
     // "lib": [],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */
