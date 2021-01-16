@@ -1,11 +1,13 @@
-import 'graphql-import-node'
 import { ApolloServer } from 'apollo-server'
+import { importSchema } from 'graphql-import'
 //
 import { authenticate } from '@/middlewares/authentication'
 //
-import typeDefs from '@/schema/index.gql'
 import userQuery from '@/querys/userQuery'
 import userMutation from '@/mutations/userMutation'
+
+// separate gql files
+const typeDefs = importSchema('./schema/index.gql')
 
 // Data access
 const resolvers = {

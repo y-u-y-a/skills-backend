@@ -1,0 +1,9 @@
+# import User, Query, Mutation from "./users.gql"
+
+type Query {
+  Query: Query
+}
+
+type Mutation {
+  Mutation: Mutation
+}
