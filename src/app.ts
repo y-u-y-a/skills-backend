@@ -1,5 +1,4 @@
 // import express, { urlencoded, json } from 'express'
-
 import server from '@/graphql'
 import DB from '@/config/database'
 // import Errors from '@/middlewares/errorsHandler'

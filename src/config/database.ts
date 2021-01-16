@@ -1,8 +1,8 @@
-import { getConnectionOptions, createConnection } from 'typeorm'
+import { createConnection } from 'typeorm'
+import ormConfig from '@/config/ormconfig'
 
 export class DB {
   connect = async () => {
-    const ormConfig = await getConnectionOptions()
     await createConnection(ormConfig)
   }
 }
