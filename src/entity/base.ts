@@ -3,28 +3,26 @@ import {
   BaseEntity,
   PrimaryGeneratedColumn,
   CreateDateColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from 'typeorm'
 import { validate } from 'class-validator'
 
 @Entity({ synchronize: false })
 class Base extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id!: Number
+  readonly id!: Number
 
   @CreateDateColumn({
     name: 'created_at',
-    precision: 0,
-    default: () => 'NOW()'
+    type: 'timestamp',
   })
-  createdAt!: Date
+  readonly createdAt!: Date
 
   @UpdateDateColumn({
     name: 'updated_at',
-    precision: 0,
-    default: () => 'NOW()'
+    type: 'timestamp',
   })
-  updatedAt!: Date
+  readonly updatedAt!: Date
 
   // methods
   public validate = async () => {

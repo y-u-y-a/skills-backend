@@ -15,30 +15,31 @@ services:
       MYSQL_ROOT_PASSWORD: test
       TZ: Asia/Tokyo
     ports:
-      - 4306:3306
+      - 4306:4306
     networks:
-      - default
+      - dev-network
 
   backend:
     container_name: skills_backend
     build:
       context: ./
-      dockerfile: Dockerfile.dev
+      dockerfile: build/Dockerfile.dev
     volumes:
-      - ./:/code
-      - /code/node_modules # マウントで消さないため
+      - ./:/app
+      - /app/node_modules # マウントで消さないため(ローカルにマウントもさせない)
+      - /app/.nuxt
+      - /app/dist
     ports:
       - 8000:8000
-    working_dir: /code
-    command: npm run dev
+    working_dir: /app
+    command: yarn dev
+    networks:
+      - dev-network
     depends_on:
       - mysql
-    networks:
-      - default
 
 networks:
-  default:
-    external: false
+  dev-network:
+    external: false # ここのコンテナのみで共有
 volumes:
   mysql-data:
-  # node_modules:
