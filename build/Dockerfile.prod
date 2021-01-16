@@ -1,9 +1,9 @@
 FROM node:lts-alpine
 
-WORKDIR /app
 
-COPY ./package.json ./package.json
-COPY ./yarn.lock ./yarn.lock
+COPY ./app/package.json ./app/package.json
+COPY ./app/yarn.lock ./app/yarn.lock
+WORKDIR /app
 RUN yarn install
 # 上記はファイルに変更があれば実行
 

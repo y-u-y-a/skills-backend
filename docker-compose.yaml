@@ -25,7 +25,7 @@ services:
       context: ./
       dockerfile: build/Dockerfile.dev
     volumes:
-      - ./:/app
+      - ./app:/app
       - /app/node_modules # マウントで消さないため(ローカルにマウントもさせない)
       - /app/.nuxt
       - /app/dist
