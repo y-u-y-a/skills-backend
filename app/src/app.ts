@@ -1,6 +1,6 @@
 // import express, { urlencoded, json } from 'express'
 import { createConnection } from 'typeorm'
-import ormConfig from '@/config/ormconfig'
+import ormConfig from '@/database/ormconfig'
 import server from '@/graphql'
 // import Errors from '@/middlewares/errorsHandler'
 
