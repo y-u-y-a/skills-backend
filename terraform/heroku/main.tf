@@ -16,3 +16,26 @@ resource "heroku_build" "main" {
     path = "../../app"
   }
 }
+
+// database
+resource "heroku_addon" "main" {
+  app  = heroku_app.main.name
+  plan = "jawsdb:kitefin"
+}
+
+// set config(this is env)
+resource "heroku_config" "main" {
+  vars = {
+    NODE_ENV = "heroku"
+  }
+}
+// config:add
+resource "heroku_app_config_association" "main" {
+  app_id = heroku_app.main.id
+  vars = heroku_config.main.vars
+}
+
+// output
+output "app_url" {
+  value = "https://${heroku_app.main.name}.herokuapp.com"
+}

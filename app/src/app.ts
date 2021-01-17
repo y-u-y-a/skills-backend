@@ -17,6 +17,12 @@ import server from '@/graphql'
 // start(apollo-server)
 server.listen(process.env.PORT || 8000).then(async ({ url }) => {
   await createConnection(ormConfig)
-  console.log(url)
-  console.log('start Server...')
+    .then((res) => {
+      console.log('DB接続成功！')
+      console.log('url', url)
+      console.log('start Server...')
+    })
+    .catch((err) => {
+      console.log('DB接続失敗...')
+    })
 })

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon -L",
-    "prod": "yarn build && yarn start",
+    "prod": "yarn install && yarn build && yarn start",
     "build": "rm -rf dist && tsc && webpack",
     "start": "node dist/app.js",
     "migrate:up": "yarn typeorm schema:sync",
@@ -18,7 +18,6 @@
     "migrate:generate": "yarn typeorm migration:generate --name",
     "migrate:run": "yarn typeorm migration:run",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm --config src/database/ormconfig",
-    "thpaths": "",
     "fmt": "prettier --write src/**/*.ts"
   },
   "prettier": {
