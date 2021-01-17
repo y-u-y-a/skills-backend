@@ -1,10 +1,8 @@
-# import Error from "./errors.gql"
-
-extend type Query {
+type Query {
   all: [User]
   find(id: Int): User
 }
-extend type Mutation {
+type Mutation {
   login(input: LoginInput): LoginUserPayload!
   createUser(input: CreateUserInput!): CreateUserPayload!
   # updateUser(id: Int!): User
@@ -29,6 +27,12 @@ type CreateUserPayload {
   token: String
   errors: [Error]
 }
+# 必要ない？
+type Error {
+  property: String
+  messages: [String]
+}
+
 """
 Login
 """

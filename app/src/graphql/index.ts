@@ -1,12 +1,12 @@
-import { ApolloServer } from 'apollo-server'
 import { importSchema } from 'graphql-import'
+import { ApolloServer } from 'apollo-server'
 //
 import { authenticate } from '@/middlewares/authentication'
 //
 import userQuery from '@/querys/userQuery'
 import userMutation from '@/mutations/userMutation'
 
-// separate gql files
+// separated gql files
 const typeDefs = importSchema('./schema/index.gql')
 
 // Data access

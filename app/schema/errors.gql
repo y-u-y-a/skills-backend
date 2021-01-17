@@ -1,4 +1,0 @@
-type Error {
-  property: String
-  messages: [String]
-}
