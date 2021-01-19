@@ -1,1 +1,9 @@
 # import User, Query, Mutation from "./users.gql"
+
+type Query {
+  node: String!
+}
+
+type Mutation {
+  noop: String
+}

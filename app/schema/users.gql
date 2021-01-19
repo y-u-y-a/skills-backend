@@ -1,8 +1,8 @@
-type Query {
+extend type Query {
   all: [User]
   find(id: Int): User
 }
-type Mutation {
+extend type Mutation {
   login(input: LoginInput): LoginUserPayload!
   createUser(input: CreateUserInput!): CreateUserPayload!
   # updateUser(id: Int!): User

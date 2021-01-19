@@ -23,7 +23,7 @@ resource "heroku_addon" "main" {
   plan = "jawsdb:kitefin"
 }
 
-// set config(this is env)
+// set env
 resource "heroku_config" "main" {
   vars = {
     NODE_ENV = "heroku"
