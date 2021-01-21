@@ -12,6 +12,10 @@
 - TypeORMを使用しているため、TypeScriptのトランスパイルにはwebpackを使用
 
 ## local環境
+### VSCodeの設定
+- prettierとeslintをインストール
+- prettierの設定は`.prettierrc`を参照
+- eslintの設定は`.eslintrc`を参照
 ### DB設定
 - .env.sampleに設定を記述してあるので参照
 - dockerのmysqlを構築する場合(mysqlサービスのみを指定)
