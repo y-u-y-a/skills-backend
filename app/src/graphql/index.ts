@@ -17,8 +17,8 @@ const resolvers = {
 
 // GraphQL Serverの前に実行する処理(戻り値はQuery, Mutationの第3引数)
 const context = ({ req }: any) => {
-  const user = authenticate(req.headers.authentication)
-  return user
+  const loginUser = authenticate(req.headers.authentication)
+  return loginUser
 }
 
 // apollo server

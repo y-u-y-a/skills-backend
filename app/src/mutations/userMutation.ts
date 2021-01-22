@@ -1,30 +1,37 @@
 import { encrypt, createToken } from '@/middlewares/authentication'
 import User from '@/entity/user'
+import * as T from '@/types/user'
+import { validateErrorPayload } from '@/middlewares/errorsHandler'
 
-const userMutation = {
-  // create(signUp)
-  async createUser(_: any, req: any) {
+export default {
+  // login
+  async login(req: any, loginUser: T.InputUser): Promise<T.LoginPayload> {
+    return { user: loginUser }
+  },
+  // TODO: logout
+  // signUp
+  async createUser(_: unknown, req: { input: User }): Promise<T.CreatePayload> {
+    //
     const params = setParams(req.input)
-    const user = User.create(params) // create instance
-    let errors = await user.validate() // validate
+    let user = User.create(params) // create instance
+    const errors = await user.validate()
     //
     if (errors) {
-      return setErrorPayload(errors)
+      return setPayload(null, null, errors)
+    } else {
+      user.password = encrypt(params.password)
+      user = await user.save()
+      const token = createToken(user)
+      return setPayload(user, token, null)
     }
-    //
-    user.password = encrypt(params.password) // encrypt password
-    const token = createToken(user) // create token
-    const createdUser = await user.save() // insert
-    return { user: createdUser, token: token }
   },
-  // login
-  async login(_: any, req: any, authUser: any) {
-    return { user: authUser }
-  },
+  // TODO: update
+  // TODO: delete
 }
 
-export default userMutation
-
+// #################################
+// private
+// #################################
 const setParams = (input: User) => {
   return {
     email: input.email,
@@ -32,13 +39,14 @@ const setParams = (input: User) => {
     name: input.name,
   }
 }
-const setErrorPayload = (errors: any) => {
-  const result: object[] = []
-  errors.forEach((err: any) => {
-    result.push({
-      property: err.property,
-      messages: Object.values(err.constraints),
-    })
-  })
-  return { errors: result }
+//
+const setPayload = (user: T.InputUser, token: T.InputToken, errors: any) => {
+  if (errors) {
+    errors = validateErrorPayload(errors)
+  }
+  return {
+    user,
+    token,
+    errors,
+  }
 }

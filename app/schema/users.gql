@@ -1,6 +1,6 @@
 extend type Query {
-  all: [User]
-  find(id: Int): User
+  allUser: [User]
+  findUser(id: Int): User
 }
 extend type Mutation {
   login(input: LoginInput): LoginUserPayload!
@@ -9,37 +9,36 @@ extend type Mutation {
   # deleteUser(id: Int!): User
 }
 type User {
-  id: ID!
+  id: ID
   email: String
   password: String
   name: String
 }
 """
-Create
+input
 """
 input CreateUserInput {
   email: String
   password: String
   name: String
 }
+input LoginInput {
+  email: String!
+  password: String!
+}
+"""
+payload
+"""
 type CreateUserPayload {
   user: User
   token: String
   errors: [Error]
 }
+type LoginUserPayload {
+  user: User
+}
 # 必要ない？
 type Error {
   property: String
   messages: [String]
-}
-
-"""
-Login
-"""
-input LoginInput {
-  email: String!
-  password: String!
-}
-type LoginUserPayload {
-  user: User
 }

@@ -58,6 +58,7 @@
   },
   "prettier": {
     "tabWidth": 2,
+    "printWidth": 300,
     "semi": false,
     "singleQuote": true,
     "bracketSpacing": true,
@@ -77,7 +78,7 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "sourceType": "module",
-      "project": "./app/tsconfig.json"
+      "project": "./tsconfig.json"
     },
     "env": {
       "es6": true,

@@ -12,10 +12,11 @@ import { getManager } from 'typeorm'
  * class-validatorにないものはここでカスタマイズ
  * entity内のみの使用を想定
  *******************************************/
-export const Unique = (
-  entity: Function,
-  validationOptions?: ValidationOptions
-) => {
+// HACK: 戻り値の型定義を修正
+type Unique = {
+  (entity: any, validationOptions: ValidationOptions | undefined): any
+}
+export const Unique: Unique = (entity, validationOptions) => {
   // set default value
   validationOptions = {
     ...{ message: '$value already exists. Choose another.' },
@@ -33,11 +34,15 @@ export const Unique = (
   }
 }
 
-// private
+// 上記のUniqueをvalidatorに追加するためオーバーライド(private)
+type validate = {
+  (value: any, args: ValidationArguments): Promise<boolean>
+}
 @ValidatorConstraint({ async: true })
 export class UniqueOnDatabaseExistConstraint
   implements ValidatorConstraintInterface {
-  async validate(value: any, args: ValidationArguments) {
+  //
+  validate: validate = async (value, args) => {
     const entity = (args as any).object[`class_entity_${args.property}`]
     return getManager()
       .count(entity, { [args.property]: value })

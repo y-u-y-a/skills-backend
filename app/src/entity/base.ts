@@ -11,7 +11,7 @@ import { validate } from 'class-validator'
 @Entity({ synchronize: false })
 class Base extends BaseEntity {
   @PrimaryGeneratedColumn()
-  readonly id!: Number
+  readonly id!: number
 
   @CreateDateColumn({
     name: 'created_at',

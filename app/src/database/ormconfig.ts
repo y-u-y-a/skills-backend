@@ -1,9 +1,10 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
 import entityList from '@/entity'
 
-let rootDir = process.env.NODE_ENV === 'dev' ? 'src' : 'dist'
+dotenv.config()
+const rootDir = process.env.NODE_ENV === 'dev' ? 'src' : 'dist'
 
-let type = process.env.DB_DRIVER || 'mysql'
+const type = process.env.DB_DRIVER || 'mysql'
 let host = process.env.DB_HOST || '127.0.0.1'
 let port = process.env.DB_PORT || '4306'
 let username = process.env.DB_USERNAME || 'test'

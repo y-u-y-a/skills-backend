@@ -2,7 +2,7 @@
 import { createConnection } from 'typeorm'
 import ormConfig from '@/database/ormconfig'
 import server from '@/graphql'
-// import Errors from '@/middlewares/errorsHandler'
+// import {serverError} from '@/middlewares/errorsHandler'
 
 // start(apollo-server-express)
 // const app = express()
@@ -17,12 +17,12 @@ import server from '@/graphql'
 // start(apollo-server)
 server.listen(process.env.PORT || 8000).then(async ({ url }) => {
   await createConnection(ormConfig)
-    .then((res) => {
+    .then(() => {
       console.log('DB接続成功！')
-      console.log('url', url)
-      console.log('start Server...')
+      console.log('start Server...', url)
     })
     .catch((err) => {
       console.log('DB接続失敗...')
+      console.log(err)
     })
 })
