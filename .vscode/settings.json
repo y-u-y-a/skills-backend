@@ -1,19 +1,21 @@
 {
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
   "[javascript]": {
     "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll": true,
-  //   "source.fixAll.eslint": true
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+  // "files.associations": {
+  //   "*.json": "jsonc"
   // },
-  // "eslint.validate": ["javascript", "javascriptreact", "vue"],
 }

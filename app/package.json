@@ -18,7 +18,8 @@
     "migrate:generate": "yarn typeorm migration:generate --name",
     "migrate:run": "yarn typeorm migration:run",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/.bin/typeorm --config src/database/ormconfig",
-    "fmt": "prettier --write src/**/*.ts"
+    "fmt": "prettier --write src/**/*.ts",
+    "lint": "eslint --fix ./src/**/*.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
@@ -27,6 +28,10 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mysql": "^2.15.17",
     "@types/node": "^14.14.17",
+    "@types/webpack-node-externals": "^2.5.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
     "graphql-tag": "^2.11.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.7",
@@ -50,5 +55,36 @@
     "graphql-import": "^1.0.2",
     "jsonwebtoken": "^8.5.1",
     "typeorm": "^0.2.29"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "parser": "typescript"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "sourceType": "module",
+      "project": "./app/tsconfig.json"
+    },
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "rules": {
+      "@typescript-eslint/no-explicit-any": ["off"]
+    }
   }
 }
