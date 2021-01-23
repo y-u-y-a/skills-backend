@@ -7,3 +7,6 @@ variable "heroku_email" {
 variable "heroku_api_key" {
   default = "c4dd2c26-40d0-4d00-b4ea-8c3728951710"
 }
+variable "node_env" {
+  default = "production"
+}

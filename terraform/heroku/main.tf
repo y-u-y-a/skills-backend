@@ -26,7 +26,7 @@ resource "heroku_addon" "main" {
 // set env
 resource "heroku_config" "main" {
   vars = {
-    NODE_ENV = "heroku"
+    NODE_ENV = var.node_env
   }
 }
 // config:add
