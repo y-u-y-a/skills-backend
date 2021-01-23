@@ -1,7 +1,7 @@
 import jwt, { SignOptions } from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import User from '@/entity/user'
-import * as T from '@/types/user'
+import * as T from '@/interfaces/auth'
 
 const secret = 'this_is_secret_key'
 
@@ -10,23 +10,23 @@ const secret = 'this_is_secret_key'
  * 2回目以降に使用(ブラウザに保存したtokenと'secret'が必要)
  * @param authorization_token authorization in request headers
  */
-export const authenticate = async (authToken: T.InputToken): Promise<T.FindPayload> => {
-  const res: T.FindPayload = { user: undefined }
+export const authenticate: T.Authenticate = async (authToken) => {
+  const result: { user: User | null } = { user: null }
   //
   if (authToken) {
     const decoded: any = jwt.verify(authToken, secret)
     const params = { email: decoded.email }
-    const user: User | undefined = await User.findOne(params)
+    const user = await User.findOne(params)
     // 存在した場合passwordチェック
-    res.user = user && user.password === decoded.password ? user : undefined
+    result.user = user && user.password === decoded.password ? user : null
   }
-  return res
+  return result
 }
 /**
  * @param User
  * @return token
  */
-export const createToken = (user: User): string => {
+export const createToken: T.CreateToken = (user) => {
   const payload = { email: user.email, password: user.password }
   const options: SignOptions = { algorithm: 'HS256', expiresIn: '3days' }
   const token = jwt.sign(payload, secret, options)
@@ -36,7 +36,7 @@ export const createToken = (user: User): string => {
  * @param password input password
  * @return Hashed passwored
  */
-export const encrypt = (password: string): string => {
+export const encrypt: T.Encrypt = (password) => {
   const hashedPassword = bcrypt.hashSync(password, 10)
   return hashedPassword
 }

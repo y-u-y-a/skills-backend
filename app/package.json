@@ -78,7 +78,7 @@
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "sourceType": "module",
-      "project": "./tsconfig.json"
+      "project": "./app/tsconfig.json"
     },
     "env": {
       "es6": true,
