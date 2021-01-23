@@ -1,11 +1,5 @@
 // コメント
-import {
-  Entity,
-  BaseEntity,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-} from 'typeorm'
+import { Entity, BaseEntity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm'
 import { validate } from 'class-validator'
 
 @Entity({ synchronize: false })
