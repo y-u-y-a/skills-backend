@@ -1,41 +1,55 @@
 extend type Query {
-  allUser: [User]
-  findUser(id: Int): User
+  getUser(id: Int!): User
+  getAllUser: [User]
 }
 extend type Mutation {
-  login(input: LoginInput): LoginUserPayload!
+  login(input: LoginInput!): LoginUserPayload!
   createUser(input: CreateUserInput!): CreateUserPayload!
-  # updateUser(id: Int!): User
-  # deleteUser(id: Int!): User
+  updateUser(input: UpdateUserInput!): UpdateUserPayload!
+  deleteUser(id: Int!): DeleteUserPayload!
 }
 type User {
   id: ID
   email: String
   password: String
   name: String
+  deleteFlg: Boolean
 }
 """
 input
 """
+input LoginInput {
+  email: String!
+  password: String!
+}
 input CreateUserInput {
   email: String
   password: String
   name: String
 }
-input LoginInput {
-  email: String!
-  password: String!
+input UpdateUserInput {
+  id: Int
+  email: String
+  password: String
+  name: String
 }
 """
 payload
 """
+type LoginUserPayload {
+  user: User
+}
 type CreateUserPayload {
   user: User
   token: String
   errors: [Error]
 }
-type LoginUserPayload {
-  user: User
+type UpdateUserPayload {
+  beforeUser: User
+  afterUser: User
+}
+type DeleteUserPayload {
+  result: Boolean!
 }
 # 必要ない？
 type Error {

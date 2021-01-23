@@ -1,14 +1,15 @@
 import User from '@/entity/user'
 
-// querys
-export type AllUser = {
-  (): Promise<User[]>
-}
-//
-export type FindUser = {
+// Query
+export type GetUser = {
   (_: unknown, req: { id: number }): Promise<User | null>
 }
-// mutations
+//
+export type GetAllUser = {
+  (): Promise<User[]>
+}
+
+// Mutation
 export type Login = {
   (_: unknown, req: any, loginUser: User | null): { user: User | null }
 }
@@ -19,4 +20,12 @@ export type CreateUser = {
     token: string | null
     errors: any
   }>
+}
+//
+export type UpdateUser = {
+  (_: unknown, req: { input: User }): Promise<{ beforeUser: User | null; afterUser: User | null }>
+}
+//
+export type DeleteUser = {
+  (_: unknown, req: { id: number }): Promise<{ result: boolean }>
 }

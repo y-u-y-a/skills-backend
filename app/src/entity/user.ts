@@ -22,5 +22,8 @@ class User extends Base {
   @Column({ length: 50 })
   @MaxLength(50, { message: 'required less than 50 characters.' })
   name!: string
+
+  @Column({ name: 'delete_flg', default: false })
+  deleteFlg!: boolean
 }
 export default User

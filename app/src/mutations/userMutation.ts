@@ -7,6 +7,7 @@ const login: T.Login = (_, req, loginUser) => {
   return { user: loginUser }
 }
 // TODO: logout
+
 const createUser: T.CreateUser = async (_, req) => {
   //
   const params = setParams(req.input)
@@ -22,12 +23,40 @@ const createUser: T.CreateUser = async (_, req) => {
     return setPayload(user, token, null)
   }
 }
-// TODO: update
-// TODO: delete
+
+const updateUser: T.UpdateUser = async (_, req) => {
+  const params = req.input
+  const user = await User.findOne(params.id)
+  let beforeUser = null
+  let afterUser = null
+  //
+  if (user) {
+    beforeUser = Object.assign({}, user) // 値渡し
+    user.name = params.name
+    user.email = params.email
+    user.password = params.password
+    afterUser = await user.save()
+  }
+  return { beforeUser, afterUser }
+}
+
+const deleteUser: T.DeleteUser = async (_, req) => {
+  let result = false
+  let user = await User.findOne(req.id)
+  //
+  if (user && !user.deleteFlg) {
+    user.deleteFlg = true
+    user = await user.save()
+    result = true
+  }
+  return { result }
+}
 
 export default {
   login,
   createUser,
+  updateUser,
+  deleteUser,
 }
 
 // #################################
