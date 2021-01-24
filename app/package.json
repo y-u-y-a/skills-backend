@@ -9,8 +9,8 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "dev": "nodemon -L",
-    "prod": "yarn install && yarn build && yarn start",
+    "dev": "cross-env NODE_ENV=dev nodemon -L",
+    "prod": "cross-env NODE_ENV=production yarn build && yarn start",
     "build": "rm -rf dist && tsc && webpack",
     "start": "node dist/app.js",
     "migrate:up": "yarn typeorm schema:sync",
@@ -33,7 +33,6 @@
     "@typescript-eslint/parser": "^4.14.0",
     "eslint": "^7.18.0",
     "graphql-tag": "^2.11.0",
-    "mysql": "^2.18.1",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
     "ts-loader": "^8.0.14",
@@ -54,6 +53,7 @@
     "graphql": "^15.4.0",
     "graphql-import": "^1.0.2",
     "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
     "typeorm": "^0.2.29"
   },
   "prettier": {
@@ -85,7 +85,9 @@
       "node": true
     },
     "rules": {
-      "@typescript-eslint/no-explicit-any": ["off"]
+      "@typescript-eslint/no-explicit-any": [
+        "off"
+      ]
     }
   }
 }

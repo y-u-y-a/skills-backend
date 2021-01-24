@@ -2,7 +2,8 @@ import dotenv from 'dotenv'
 import entityList from '@/entity'
 
 dotenv.config()
-const rootDir = process.env.NODE_ENV === 'prod' ? 'dist' : 'src'
+// devはts-nodeでの実行を想定(src), productionはnodeでの実行を想定(dist)
+const rootDir = process.env.NODE_ENV === 'production' ? 'dist' : 'src'
 
 const type = process.env.DB_DRIVER || 'mysql'
 let host = process.env.DB_HOST || '127.0.0.1'
@@ -32,10 +33,11 @@ const ormConfig: any = {
   logging: false,
   synchronize: false, // server起動時にgenerate
   migrationsRun: true, // server起動時にrun
-  entities: entityList, // schema時, アプリケーションとして参照(distから分かるもの)
+  entities: entityList, // schema時, アプリケーションとして参照(distのentity参照)
   migrations: [`./${rootDir}/database/migrations/*`], // run時に参照
   cli: {
     migrationsDir: `./${rootDir}/database/migrations`, // gen, run時に参照
   },
 }
+console.log(process.env.NODE_ENV)
 export default ormConfig

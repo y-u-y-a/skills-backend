@@ -1,7 +1,8 @@
-import path from 'path'
-import nodeExternals from 'webpack-node-externals'
+/* eslint-disable */
+const path = require('path')
+const nodeExternals = require('webpack-node-externals')
 
-export default {
+module.exports = {
   //
   mode: 'production',
   target: 'node',
