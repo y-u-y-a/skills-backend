@@ -2,6 +2,10 @@
 
 ブラウザ上でスキルシートを作成できるアプリの API
 
+## GraphQL playglound: dev 環境
+
+https://skills-api-dev.herokuapp.com/
+
 ## 仕様技術
 
 - TypeScript
@@ -10,6 +14,7 @@
 - GraphQL
 - Terraform
 - Docker
+- MySQL
 
 ### 補足
 
