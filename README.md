@@ -4,7 +4,7 @@
 
 ## GraphQL playglound: dev 環境
 
-https://skills-api-dev.herokuapp.com
+https://skills-api-dev.herokuapp.com/
 
 ## 仕様技術
 
