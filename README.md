@@ -2,6 +2,8 @@
 
 ブラウザ上でスキルシートを作成できるアプリの API
 
+### フロントリポジトリ：https://github.com/y-u-y-a/skills_frontend
+
 ## GraphQL playglound: dev 環境
 
 https://skills-api-dev.herokuapp.com/
