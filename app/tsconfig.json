@@ -4,8 +4,8 @@
 
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
-    "target": "ESNext",                       /* 書き出すバージョンを指定 */
-    "module": "commonJS",                     /* 同じ？ */
+    "target": "esnext",                       /* トランスパイルする言語を指定 */
+    "module": "es6",                          /* モジュールの仕様を指定(commonjs or es6 ...) */
     "moduleResolution": "node",
     "baseUrl": ".",                           /* Base directory */
     "paths": {                                /* エイリアス */
@@ -20,7 +20,7 @@
     // "sourceMap": true,                     /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     "outDir": "./dist",                       /* コンパイルされたJSのファイルの置き場所 */
-    "rootDir": "./src",                          /* アプリケーションディレクトリ(TSファイルの置き場所) */
+    "rootDir": "./src",                       /* アプリケーションディレクトリ(TSファイルの置き場所) */
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
     // "removeComments": true,                /* Do not emit comments to output. */

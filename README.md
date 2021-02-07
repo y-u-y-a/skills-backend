@@ -11,7 +11,7 @@ https://skills-api-dev.herokuapp.com/
 ## 仕様技術
 
 - TypeScript
-- Node.js
+- Node.js(ECMAScript)
 - typeORM
 - GraphQL
 - Terraform
