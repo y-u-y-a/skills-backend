@@ -82,3 +82,6 @@ $ terraform destroy
 ## production 環境: AWS
 
 - node コマンドにおける NODE_ENV のデフォルトは`pruduction`
+
+* ts ファイルは src ディレクトリのみに配置
+* src 以外では, CommonJS で記述
